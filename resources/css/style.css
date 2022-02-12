@@ -5,8 +5,128 @@
 }
 body{
     background-color: #021f54;
+    color: #ffffff;
+}
+
+/* DatePicker calendar style */
+.ui-widget.ui-widget-content{
+    padding: 1rem;
+    width: auto;
+    max-width: fit-content;
+    margin: 0 auto;
+    row-gap: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #021f543d;
+    box-shadow: 0 8px 32px 0 #28282857;
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 9px ) ;
+    border-radius: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.622);
+    border-left: 1px solid rgba(255, 255, 255, 0.844);
+    outline: 1px solid rgba( 255, 255, 255, 0.18 );
     color: #fff;
 }
+
+.ui-datepicker .ui-datepicker-header {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.ui-datepicker-calendar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ui-datepicker-calendar tbody, 
+.ui-datepicker-calendar thead{
+    text-align: center;
+}
+.ui-datepicker-calendar thead{
+    height: 5rem;
+    display: flex;
+}
+.ui-datepicker-calendar tbody tr, 
+.ui-datepicker-calendar thead tr{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+.ui-datepicker-next,
+.ui-datepicker-prev{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    background-color: #ff3823 !important;
+    border-radius: 3rem;
+    transition: background-color .5s ease-in-out;
+    cursor: pointer;
+}
+.ui-datepicker-next:hover,
+.ui-datepicker-prev:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(234, 177, 177);
+}
+.ui-datepicker-next span {
+    background-image: url("../../resources/images/chevron_right_white_24dp.svg") !important;
+    background-position: center !important;
+}
+
+.ui-datepicker-prev span {
+    background-image: url("../../resources/images/chevron_left_black_24dp.svg") !important;
+    background-position:center!important;
+}
+
+.ui-datepicker-calendar thead tr th{
+    font-weight: normal;
+}
+.ui-datepicker-calendar tbody tr td{
+    font-weight: normal;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 2rem;
+    max-width: 2rem;
+    padding: 1rem;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.5);
+    transition: background-color .4s;
+}
+.ui-datepicker-calendar tbody tr td:hover{
+    background-color: #484848b8;
+    outline: 1px solid #777;
+    cursor: pointer;
+    border-radius: .3rem;
+}
+.ui-widget-content .ui-state-default{
+    padding: 1;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.ui-datepicker-current-day {
+    background-color: #ff3823 !important;
+    border-radius: .3rem;
+}
+.ui-state-highlight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid #ff3923ec !important;
+    color: #fff;
+}
+
 /* Task card styling */
 .task_wrapper{
     padding: 6rem 1rem;
