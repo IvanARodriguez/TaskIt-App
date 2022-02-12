@@ -7,3 +7,107 @@ body{
     background-color: #021f54;
     color: #fff;
 }
+/* Task card styling */
+.task_wrapper{
+    padding: 6rem 1rem;
+    margin: 7rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5rem;
+    background-color: white;
+}
+.task_title{
+    font-weight: bold;
+    color: rgb(145, 143, 143);
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+
+
+}
+.task_card{
+    background-color: #fffcd6;
+    color: #000;
+    position: relative;
+    max-width: 90%;
+    border-radius: .7rem;
+    padding: 1rem;
+    box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
+}
+.card_date.due_soon{
+    display: inline-block;
+    background-color: #ff3823;
+    border-radius: .7rem;
+    color: #fff;
+}
+.card_date{
+    text-align: center;
+    padding: .2rem;
+    position:absolute;
+    top:-25%;
+    box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
+    width: 5.5rem;
+    height: 5.5rem;
+    overflow: hidden;
+    font-weight: bold;
+    
+
+}
+.task_card h2{
+    display: inline-block;
+    position: relative;
+    left: 6rem;
+    font-weight: lighter;
+}
+.card_owner{
+    font-weight: bold;
+    color: #0844a4;
+}
+.task_card h3{
+    padding-top: 1rem;
+    font-weight: lighter
+}
+.card_status{
+    font-weight: normal;
+}
+.card_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    position: relative;
+    bottom:-1.7rem;
+    right: -1.5rem;
+    column-gap: .8rem;
+}
+.card_btn{
+    border-radius: 50%;
+    box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
+}
+.card_date.in_progress{
+    display: inline-block;
+    background-color: #d757f6;
+    border-radius: .7rem;
+    color: #fff;
+}
+.card_date.to_do{
+    display: inline-block;
+    background-color:#3d8af7;
+    border-radius: .7rem;
+    color: #fff;
+}
+.card_date.review{
+    display: inline-block;
+    background-color:#fefb64;
+    border-radius: .7rem;
+    color: rgb(14, 13, 13);
+}
+.card_date.done{
+    display: inline-block;
+    background-color:#92d36e;
+    border-radius: .7rem;
+    color: white;
+}
