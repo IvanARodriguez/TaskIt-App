@@ -12,62 +12,63 @@
     <link href="resources/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>TASKER</h1>
-   <!-- form control/input with calendar -->
-   <form>
-       <div class="mb-3">
-        <label for="datepicker" class="form-label">calendar</label>
-        <div id="datepicker"></div>
-        <!-- <input type="date" class="form-control" id="datepicker"> -->
-      </div>
-       <div class="mb-3">
-        <label for="AssignTo" class="form-label">Assign To</label>
-        <input type="text" class="form-control" id="AssignTo" placeholder="Enter Name">
-      </div>
-       <div class="mb-3">
-        <label for="TaskRole" class="form-label">Task Role</label>
-        <input type="text" class="form-control" id="TaskRole" placeholder="Enter Role">
-      </div>
-       <div class="mb-3">
-        <label for="TaskName" class="form-label">Task Name</label>
-        <input type="text" class="form-control" id="TaskName" placeholder="What Need To Be Done?">
-      </div>
-      <div class="mb-3">
-        <label for="Description" class="form-label">Description</label>
-        <textarea class="form-control" id="Description" rows="4"></textarea>
-      </div>
-      <div class="mb-3">
-        <label for="Notes" class="form-label">Notes (Optional)</label>
-        <textarea class="form-control" id="Notes" rows="4"></textarea>
-      </div>
-      <p>STATUS</p>
-      <div class="row">
-          <div class="col">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ToDo" value="option1">
-                <label class="form-check-label" for="ToDo">To Do</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="InProgress" value="option2">
-                <label class="form-check-label" for="InProgress">In Progress</label>
-              </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Review" value="option3">
-                <label class="form-check-label" for="Review">Review</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Done" value="option4">
-                <label class="form-check-label" for="Done">Done</label>
-              </div>
-          </div>
-      </div>
-   </form>
-   <button type="button" class="btn btn-primary btn-sm">Add Task <i class="bi bi-plus"></i></button>
-   <button type="button" class="btn btn-secondary btn-sm">Reset</button>
+    <div class="container">
+        <h1>TASKER</h1> 
+        <!-- form control/input with calendar -->
+        <form>
+            <div class="mb-3">
+             <label for="datepicker" class="form-label">calendar</label>
+             <div id="datepicker"></div>
+            </div>
+            <div class="mb-3">
+             <label for="AssignTo" class="form-label">Assign To</label>
+             <input type="text" class="form-control" id="AssignTo" placeholder="Enter Name">
+           </div>
+            <div class="mb-3">
+             <label for="TaskRole" class="form-label">Task Role</label>
+             <input type="text" class="form-control" id="TaskRole" placeholder="Enter Role">
+           </div>
+            <div class="mb-3">
+             <label for="TaskName" class="form-label">Task Name</label>
+             <input type="text" class="form-control" id="TaskName" placeholder="What Need To Be Done?">
+           </div>
+           <div class="mb-3">
+             <label for="Description" class="form-label">Description</label>
+             <textarea class="form-control" id="Description" rows="4"></textarea>
+           </div>
+           <div class="mb-3">
+             <label for="Notes" class="form-label">Notes (Optional)</label>
+             <textarea class="form-control" id="Notes" rows="4"></textarea>
+           </div>
+           <p>STATUS</p>
+           <div class="row">
+               <div class="col">
+                   <div class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ToDo" value="option1">
+                     <label class="form-check-label" for="ToDo">To Do</label>
+                   </div>
+                   <div class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="InProgress" value="option2">
+                     <label class="form-check-label" for="InProgress">In Progress</label>
+                   </div>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col">
+                   <div class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Review" value="option3">
+                     <label class="form-check-label" for="Review">Review</label>
+                   </div>
+                   <div class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Done" value="option4">
+                     <label class="form-check-label" for="Done">Done</label>
+                   </div>
+               </div>
+           </div>
+           <button type="button" class="btn btn-primary btn-sm">Add Task <i class="bi bi-plus"></i></button>
+           <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
+        </form>
+    </div>
 
    <!-- second part of form control/input -->
    
