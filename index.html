@@ -15,158 +15,154 @@
     <div class="container">
         <h1 class="logo">TASKER</h1> 
         <!-- form control/input with calendar -->
-        <form>
-            <div class="mb-3">
-          
-             <div id="datepicker"></div>
+        <div class="row justify-content-center align-items-start">
+            <form class="row col-xl-7 pe-lg-5 pb-5 justify-content-lg-evenly">
+                <div class="col-md-6 pe-lg-5 ">
+                    <div class="mb-3">
+                     <div id="datepicker"></div>
+                    </div>
+                    <div class="mb-3">
+                     <label for="AssignTo" class="form-label">Assign To <span class="required_signed">*</span></label>
+                     <input type="text" class="form-control" id="AssignTo" placeholder="Enter Name" required>
+                   </div>
+                    <div class="mb-3">
+                     <label for="TaskRole" class="form-label">Task Role <span class="required_signed">*</span></label>
+                     <input type="text" class="form-control" id="TaskRole" placeholder="Enter Role" required>
+                   </div>
+                </div>
+                <div class="col-md-6 col-xl-5">
+                    <div class="mb-3">
+                     <label for="TaskName" class="form-label">Task Name <span class="required_signed">*</span></label>
+                     <input type="text" class="form-control" id="TaskName" placeholder="What Need To Be Done?" required>
+                   </div>
+                   <div class="mb-3">
+                     <label for="Description" class="form-label">Description <span class="required_signed">*</span> </label>
+                     <textarea class="form-control" id="Description" rows="4" required></textarea>
+                   </div>
+                   <div class="mb-3">
+                     <label for="Notes" class="form-label">Notes (Optional)</label>
+                     <textarea class="form-control" id="Notes" rows="4"></textarea>
+                   </div>
+                   <p>STATUS</p>
+                   <div class="row pb-3">
+                           <div class="form-check form-check-inline col-md-3 col-sm-12 ">
+                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="ToDo" value="option1">
+                             <label class="form-check-label" for="ToDo">To Do</label>
+                           </div>
+                           <div class="form-check form-check-inline col-md-3 col-sm-12 ">
+                             <input class="form-check-input input_inprogress" type="radio" name="inlineRadioOptions" id="InProgress" value="option2">
+                             <label class="form-check-label" for="InProgress">In Progress</label>
+                           </div>
+                           <div class="form-check form-check-inline col-md-3 col-sm-12" >
+                            <input class="form-check-input input_review" type="radio" name="inlineRadioOptions" id="Review" value="option3">
+                            <label class="form-check-label" for="Review">Review</label>
+                          </div>
+                          <div class="form-check form-check-inline col-md-3 col-sm-12">
+                            <input class="form-check-input input_done" type="radio" name="inlineRadioOptions" id="Done" value="option4">
+                            <label class="form-check-label" for="Done">Done</label>
+                          </div>
+                   </div>
+                </div>
+                <div class="btn_group pt-5 d-flex justify-content-center align-items-start col-12">
+                  <button type="button" class="btn btn-primary btn-sm orange_fill_btn pe-3 ps-3">Add Task <i class="bi bi-plus"></i></button>
+                  <button type="reset" class="btn btn-secondary btn-sm orange_outline_btn pe-5 ps-5">Reset</button>
+                 </div>
+            </form>
+            <!-- Task layouts -->
+            <div class="task_wrapper row col-xl-5 col-sm-12 big_screens">
+              <h2 class="task_title">Progress</h2>
+              <div class="task_card  col-lg-5 col-xl-12 ">
+                  <div class="card_date due_soon col">
+                      <div class="card_month">Aug</div>
+                      <div class="card_month">5</div>
+                      <div class="card_month">Due Soon</div>
+                  </div>
+                  <h2 class="text-sm-start text-md-end">Assigned to <span class="card_owner col-lg-12">Jon Drill</span></h2>
+                  <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
+                  <ul>
+                      <li>Talk about the possibility of failure for next hearing</li>
+                  </ul>
+                  <div class="card_buttons">
+                      <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
+                      <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
+                      <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
+                  </div>
+              </div>
+             
+              <div class="task_card col-lg-5 col-xl-12 text-start">
+                  <div class="card_date to_do">
+                      <div class="card_month">Aug</div>
+                      <div class="card_month">5</div>
+                      <div class="card_month">To Do</div>
+                  </div>
+                  <h2 class="text-sm-start">Assigned to <span class="card_owner">Jon Drill</span></h2>
+                  <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
+                  <ul>
+                      <li>Talk about the possibility of failure for next hearing</li>
+                  </ul>
+                  <div class="card_buttons">
+                      <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
+                      <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
+                      <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
+                  </div>
+              </div>
+             
+              <div class="task_card col-lg-5 col-xl-12 text-start">
+                  <div class="card_date review">
+                      <div class="card_month">Aug</div>
+                      <div class="card_month">5</div>
+                      <div class="card_month">Review</div>
+                  </div>
+                  <h2 class="text-sm-start text-md-end">Assigned to <span class="card_owner">Jon Drill</span></h2>
+                  <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
+                  <ul>
+                      <li>Talk about the possibility of failure for next hearing</li>
+                  </ul>
+                  <div class="card_buttons">
+                      <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
+                      <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
+                      <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
+                  </div>
+              </div>
+             
+              <div class="task_card col-lg-5 col-xl-12 text-start">
+                  <div class="card_date in_progress">
+                      <div class="card_month">Aug</div>
+                      <div class="card_month">5</div>
+                      <div class="card_month">Progress</div>
+                  </div>
+                  <h2 class="text-sm-start text-md-end">Assigned to <span class="card_owner">Jon Drill</span></h2>
+                  <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
+                  <ul>
+                      <li>Talk about the possibility of failure for next hearing</li>
+                  </ul>
+                  <div class="card_buttons">
+                      <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
+                      <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
+                      <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
+                  </div>
+              </div>
+             
+               <div class="task_card col-lg-5 col-xl-12 text-start">
+                  <div class="card_date done">
+                      <div class="card_month">Aug</div>
+                      <div class="card_month">5</div>
+                      <div class="card_month">Done</div>
+                  </div>
+                  <h2 class="text-sm-start text-md-end">Assigned to <span class="card_owner">Jon Drill</span></h2>
+                  <h3><span class="card_status">Done</span> | Meet with Lawyer</h3>
+                  <ul>
+                      <li>Talk about the possibility of failure for next hearing</li>
+                  </ul>
+                  <div class="card_buttons">
+                      <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
+                      <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
+                      <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
+                  </div>
+              </div>
             </div>
-            <div class="mb-3">
-             <label for="AssignTo" class="form-label">Assign To</label>
-             <input type="text" class="form-control" id="AssignTo" placeholder="Enter Name">
-           </div>
-            <div class="mb-3">
-             <label for="TaskRole" class="form-label">Task Role</label>
-             <input type="text" class="form-control" id="TaskRole" placeholder="Enter Role">
-           </div>
-            <div class="mb-3">
-             <label for="TaskName" class="form-label">Task Name</label>
-             <input type="text" class="form-control" id="TaskName" placeholder="What Need To Be Done?">
-           </div>
-           <div class="mb-3">
-             <label for="Description" class="form-label">Description</label>
-             <textarea class="form-control" id="Description" rows="4"></textarea>
-           </div>
-           <div class="mb-3">
-             <label for="Notes" class="form-label">Notes (Optional)</label>
-             <textarea class="form-control" id="Notes" rows="4"></textarea>
-           </div>
-           <p>STATUS</p>
-           <div class="row pb-3">
-               <div class="col">
-                   <div class="form-check form-check-inline">
-                     <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="ToDo" value="option1">
-                     <label class="form-check-label" for="ToDo">To Do</label>
-                   </div>
-                   <div class="form-check form-check-inline">
-                     <input class="form-check-input input_inprogress" type="radio" name="inlineRadioOptions" id="InProgress" value="option2">
-                     <label class="form-check-label" for="InProgress">In Progress</label>
-                   </div>
-               </div>
-           </div>
-           <div class="row pb-3">
-               <div class="col">
-                   <div class="form-check form-check-inline">
-                     <input class="form-check-input input_review" type="radio" name="inlineRadioOptions" id="Review" value="option3">
-                     <label class="form-check-label" for="Review">Review</label>
-                   </div>
-                   <div class="form-check form-check-inline">
-                     <input class="form-check-input input_done" type="radio" name="inlineRadioOptions" id="Done" value="option4">
-                     <label class="form-check-label" for="Done">Done</label>
-                   </div>
-               </div>
-           </div>
-           <div class="btn_group pt-5">
-             <button type="button" class="btn btn-primary btn-sm orange_fill_btn pe-3 ps-3">Add Task <i class="bi bi-plus"></i></button>
-             <button type="reset" class="btn btn-secondary btn-sm orange_outline_btn pe-5 ps-5">Reset</button>
-            </div>
-        </form>
-    </div>
-
-   <!-- second part of form control/input -->
-   
-   <!-- Task layouts -->
-<div class="task_wrapper">
-    <h2 class="task_title">Progress</h2>
-    <div class="task_card">
-        <div class="card_date due_soon">
-            <div class="card_month">Aug</div>
-            <div class="card_month">5</div>
-            <div class="card_month">Due Soon</div>
-        </div>
-        <h2>Assigned to <span class="card_owner">Jon Drill</span></h2>
-        <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
-        <ul>
-            <li>Talk about the possibility of failure for next hearing</li>
-        </ul>
-        <div class="card_buttons">
-            <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
-            <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
-            <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
         </div>
     </div>
-
-    <div class="task_card">
-        <div class="card_date to_do">
-            <div class="card_month">Aug</div>
-            <div class="card_month">5</div>
-            <div class="card_month">To Do</div>
-        </div>
-        <h2>Assigned to <span class="card_owner">Jon Drill</span></h2>
-        <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
-        <ul>
-            <li>Talk about the possibility of failure for next hearing</li>
-        </ul>
-        <div class="card_buttons">
-            <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
-            <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
-            <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
-        </div>
-    </div>
-
-    <div class="task_card">
-        <div class="card_date review">
-            <div class="card_month">Aug</div>
-            <div class="card_month">5</div>
-            <div class="card_month">Review</div>
-        </div>
-        <h2>Assigned to <span class="card_owner">Jon Drill</span></h2>
-        <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
-        <ul>
-            <li>Talk about the possibility of failure for next hearing</li>
-        </ul>
-        <div class="card_buttons">
-            <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
-            <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
-            <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
-        </div>
-    </div>
-
-    <div class="task_card">
-        <div class="card_date in_progress">
-            <div class="card_month">Aug</div>
-            <div class="card_month">5</div>
-            <div class="card_month">Progress</div>
-        </div>
-        <h2>Assigned to <span class="card_owner">Jon Drill</span></h2>
-        <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
-        <ul>
-            <li>Talk about the possibility of failure for next hearing</li>
-        </ul>
-        <div class="card_buttons">
-            <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
-            <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
-            <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
-        </div>
-    </div>
-
-     <div class="task_card">
-        <div class="card_date done">
-            <div class="card_month">Aug</div>
-            <div class="card_month">5</div>
-            <div class="card_month">Done</div>
-        </div>
-        <h2>Assigned to <span class="card_owner">Jon Drill</span></h2>
-        <h3><span class="card_status">Done</span> | Meet with Lawyer</h3>
-        <ul>
-            <li>Talk about the possibility of failure for next hearing</li>
-        </ul>
-        <div class="card_buttons">
-            <button class="btn btn-sm btn-warning card_btn"><i class="bi bi-pencil-fill"></i></button>
-            <button class="btn btn-sm btn-success card_btn"><i class="bi bi-check2-all"></i></button>
-            <button class="btn btn-sm btn-danger card_btn"><i class="bi bi-trash-fill"></i></button>
-        </div>
-    </div>
-  </div>
 
    <!-- Footer -->
     <script src="resources/script/script.js"></script>
