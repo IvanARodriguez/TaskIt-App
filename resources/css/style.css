@@ -7,12 +7,14 @@ body{
     background-color: #021f54;
     color: #ffffff;
 }
+input::placeholder{
+    color: rgb(193, 193, 193) !important;
+}
 
 /* DatePicker calendar style */
 .ui-widget.ui-widget-content{
     padding: 1rem;
-    width: auto;
-    max-width: fit-content;
+    width: fit-content;
     margin: 0 auto;
     row-gap: 1rem;
     display: flex;
@@ -49,6 +51,8 @@ body{
 .ui-datepicker-calendar thead{
     height: 5rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .ui-datepicker-calendar tbody tr, 
 .ui-datepicker-calendar thead tr{
@@ -56,7 +60,7 @@ body{
     grid-template-columns: repeat(7, 1fr);
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: .6rem;
     padding-bottom: 1rem;
 }
 .ui-datepicker-next,
@@ -64,18 +68,18 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3px;
-    background-color: #ff3823 !important;
+    background-color: #ff8500 !important;
     border-radius: 3rem;
     transition: background-color .5s ease-in-out;
     cursor: pointer;
+    border: none;
 }
 .ui-datepicker-next:hover,
 .ui-datepicker-prev:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(234, 177, 177);
+    border: none;
 }
 .ui-datepicker-next span {
     background-image: url("../../resources/images/chevron_right_white_24dp.svg") !important;
@@ -116,14 +120,14 @@ body{
     color: white;
 }
 .ui-datepicker-current-day {
-    background-color: #ff3823 !important;
+    background-color: #ff8500 !important;
     border-radius: .3rem;
 }
 .ui-state-highlight{
     display: flex;
     align-items: center;
     justify-content: center;
-    outline: 1px solid #ff3923ec !important;
+    outline: 1px solid #ff8500 !important;
     color: #fff;
 }
 /* Main Styling */
@@ -136,6 +140,9 @@ body{
 /* Form Styling */
 .form-label{
     color: #91e4fb;
+}
+.required_signed{
+    color: red;
 }
 .form-control{
     background-color: #154a83;
@@ -158,12 +165,51 @@ form p{
 .input_review[type="radio"]{
     background-color: #fefb64;
 }
+.input_review[type="radio"]:checked{
+    background: #444444 !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.input_review[type="radio"]:checked::after{
+    background: #fff647 !important;
+    content: '';
+    border-radius: 2em;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+}
 .input_inprogress[type="radio"]{
     background-color: #7e2199;
 }
 .input_done[type="radio"]{
     background-color: #92d36e;
 }
+.input_done[type="radio"]:checked{
+    background: #444444 !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.input_done[type="radio"]:checked::after{
+    background: #89f151 !important;
+    content: '';
+    border-radius: 2em;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+}
+label > input[type="radio"]:checked + *::before {
+    background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent)!important;
+    border-color: teal;
+  }
+label > input[type="radio"]:checked + * {
+    color: teal !important;
+  }
 /* Button */
 .btn_group{
     /* font-size: 2rem !important; */
@@ -177,6 +223,7 @@ form p{
 .orange_fill_btn{
     font-size: 1.5rem !important;
     background-color:#ff8500 !important ;
+    border: none;
     color:#003748;
     font-weight: bold;
     text-transform: uppercase;
@@ -195,10 +242,8 @@ form p{
 /* Task card styling */
 .task_wrapper{
     padding: 6rem 1rem;
-    margin: 7rem 0;
-    width: 100%;
     display: flex;
-    flex-direction: column;
+    column-gap: 3rem;
     align-items: center;
     justify-content: center;
     row-gap: 5rem;
@@ -215,11 +260,13 @@ form p{
 .task_card{
     background-color: #fffcd6;
     color: #000;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     position: relative;
-    max-width: 90%;
     border-radius: .7rem;
     padding: 1rem;
-    box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
+    box-shadow: 0px 3px .4rem  rgba(0, 0, 0, 0.375);
 }
 .card_date.due_soon{
     display: inline-block;
@@ -229,22 +276,20 @@ form p{
 }
 .card_date{
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: .2rem;
-    position:absolute;
-    top:-25%;
     box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
-    width: 5.5rem;
-    height: 5.5rem;
-    overflow: hidden;
+    min-width: 5.5rem;
+    min-height: 5.5rem;
     font-weight: bold;
-    
-
+    float: left;
 }
 .task_card h2{
-    display: inline-block;
-    position: relative;
-    left: 6rem;
     font-weight: lighter;
+    z-index: 300;
+    text-align: right;
 }
 .card_owner{
     font-weight: bold;
@@ -293,4 +338,62 @@ form p{
     background-color:#92d36e;
     border-radius: .7rem;
     color: white;
+}
+/* media query */
+
+.card_date{
+    text-align: center;
+    padding: .2rem;
+    position:absolute;
+    top:-25%;
+    box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
+    width: 5.5rem;
+    height: 5.5rem;
+    overflow: hidden;
+    font-weight: bold;
+}
+@media screen and (min-width: 768px){
+    .card_date{
+        text-align: center;
+        margin: 0 auto;
+        padding: .2rem;
+        position: relative;
+    }
+    .task_card h2{
+        display: inline-block;
+        position: relative;
+        margin-top: 2rem;
+        left: 0;
+        font-weight: lighter;
+    }
+}
+@media screen and (min-width: 1200px){
+    .big_screens{
+        max-height: 95vh;
+        justify-content: start;
+        overflow: scroll;
+        border-radius: 1rem;
+        transform: translateY(-8rem);
+    }
+    .container-fluid{
+        padding: 0 2%;
+    }
+    .task_wrapper{
+        padding: 3rem;
+        display: flex;
+        row-gap: 8rem;
+        background-color: white;
+        justify-content: space-between;
+    }
+    .card_date{
+        text-align: center;
+        padding: .2rem;
+        position:absolute;
+        top:-25%;
+        box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
+        width: 5.5rem;
+        height: 5.5rem;
+        overflow: hidden;
+        font-weight: bold;
+    }
 }
