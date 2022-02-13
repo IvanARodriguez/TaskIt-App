@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 body{
     background-color: #021f54;
@@ -47,6 +47,8 @@ input::placeholder{
 .ui-datepicker-calendar tbody, 
 .ui-datepicker-calendar thead{
     text-align: center;
+    width: 100%;
+
 }
 .ui-datepicker-calendar thead{
     height: 5rem;
@@ -56,29 +58,28 @@ input::placeholder{
 }
 .ui-datepicker-calendar tbody tr, 
 .ui-datepicker-calendar thead tr{
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     gap: .6rem;
     padding-bottom: 1rem;
 }
 .ui-datepicker-next,
 .ui-datepicker-prev{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #ff8500 !important;
+    top: 0 !important;
     border-radius: 3rem;
     transition: background-color .5s ease-in-out;
     cursor: pointer;
     border: none;
+    max-height: 40px;
+    max-width: 40px;
+    transition: left 130ms ease-in-out;
 }
 .ui-datepicker-next:hover,
 .ui-datepicker-prev:hover{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: none;
 }
 .ui-datepicker-next span {
@@ -102,7 +103,6 @@ input::placeholder{
     justify-content: center;
     max-height: 2rem;
     max-width: 2rem;
-    padding: 1rem;
     text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.5);
     transition: background-color .4s;
 }
@@ -128,14 +128,13 @@ input::placeholder{
     align-items: center;
     justify-content: center;
     outline: 1px solid #ff8500 !important;
-    color: #fff;
 }
 /* Main Styling */
 .logo{
     text-align: center;
     padding: 3rem 0;
     font-weight: bold;
-    color: #1c61ab;
+    color: #8cb4de;
 }
 /* Form Styling */
 .form-label{
@@ -156,7 +155,7 @@ form p{
     text-align: left;
     font-size: 2rem;
     font-weight: bold;
-    color: #1c61ab;
+    color: #73a9e3;
 }
 /* Radio */
 .input_todo[type="radio"]{
