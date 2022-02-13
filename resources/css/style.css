@@ -126,6 +126,71 @@ body{
     outline: 1px solid #ff3923ec !important;
     color: #fff;
 }
+/* Main Styling */
+.logo{
+    text-align: center;
+    padding: 3rem 0;
+    font-weight: bold;
+    color: #1c61ab;
+}
+/* Form Styling */
+.form-label{
+    color: #91e4fb;
+}
+.form-control{
+    background-color: #154a83;
+    border:none;
+    color:#fff !important;
+}
+.form-control:focus{
+    background-color: #2262a7;
+}
+form p{
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1c61ab;
+}
+/* Radio */
+.input_todo[type="radio"]{
+    background-color: #3d8af7;
+}
+.input_review[type="radio"]{
+    background-color: #fefb64;
+}
+.input_inprogress[type="radio"]{
+    background-color: #7e2199;
+}
+.input_done[type="radio"]{
+    background-color: #92d36e;
+}
+/* Button */
+.btn_group{
+    /* font-size: 2rem !important; */
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: .8rem;
+    row-gap: .8rem;
+}
+.orange_fill_btn{
+    font-size: 1.5rem !important;
+    background-color:#ff8500 !important ;
+    color:#003748;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius:10rem;
+}
+.orange_outline_btn{
+    font-size: 1.5rem !important;
+    background-color: transparent;
+    border: 2px solid #ff8500;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    color: #ff8500;
+    font-weight: bold;
+}
 
 /* Task card styling */
 .task_wrapper{
@@ -146,8 +211,6 @@ body{
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 2rem;
-
-
 }
 .task_card{
     background-color: #fffcd6;

@@ -13,11 +13,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>TASKER</h1> 
+        <h1 class="logo">TASKER</h1> 
         <!-- form control/input with calendar -->
         <form>
             <div class="mb-3">
-             <label for="datepicker" class="form-label">calendar</label>
+          
              <div id="datepicker"></div>
             </div>
             <div class="mb-3">
@@ -41,32 +41,34 @@
              <textarea class="form-control" id="Notes" rows="4"></textarea>
            </div>
            <p>STATUS</p>
-           <div class="row">
+           <div class="row pb-3">
                <div class="col">
                    <div class="form-check form-check-inline">
-                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ToDo" value="option1">
+                     <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="ToDo" value="option1">
                      <label class="form-check-label" for="ToDo">To Do</label>
                    </div>
                    <div class="form-check form-check-inline">
-                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="InProgress" value="option2">
+                     <input class="form-check-input input_inprogress" type="radio" name="inlineRadioOptions" id="InProgress" value="option2">
                      <label class="form-check-label" for="InProgress">In Progress</label>
                    </div>
                </div>
            </div>
-           <div class="row">
+           <div class="row pb-3">
                <div class="col">
                    <div class="form-check form-check-inline">
-                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Review" value="option3">
+                     <input class="form-check-input input_review" type="radio" name="inlineRadioOptions" id="Review" value="option3">
                      <label class="form-check-label" for="Review">Review</label>
                    </div>
                    <div class="form-check form-check-inline">
-                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Done" value="option4">
+                     <input class="form-check-input input_done" type="radio" name="inlineRadioOptions" id="Done" value="option4">
                      <label class="form-check-label" for="Done">Done</label>
                    </div>
                </div>
            </div>
-           <button type="button" class="btn btn-primary btn-sm">Add Task <i class="bi bi-plus"></i></button>
-           <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
+           <div class="btn_group pt-5">
+             <button type="button" class="btn btn-primary btn-sm orange_fill_btn pe-3 ps-3">Add Task <i class="bi bi-plus"></i></button>
+             <button type="reset" class="btn btn-secondary btn-sm orange_outline_btn pe-5 ps-5">Reset</button>
+            </div>
         </form>
     </div>
 
