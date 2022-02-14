@@ -30,7 +30,7 @@ input::placeholder{
     outline: 1px solid rgba( 255, 255, 255, 0.18 );
     color: #fff;
 }
-
+#ui-datepicker-div { display: none; }
 .ui-datepicker .ui-datepicker-header {
     background-color: transparent;
     color: #fff;
