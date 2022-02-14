@@ -30,7 +30,9 @@ input::placeholder{
     outline: 1px solid rgba( 255, 255, 255, 0.18 );
     color: #fff;
 }
-#ui-datepicker-div { display: none; }
+#ui-datepicker-div { 
+    display: none; 
+}
 .ui-datepicker .ui-datepicker-header {
     background-color: transparent;
     color: #fff;
@@ -368,18 +370,12 @@ label > input[type="radio"]:checked + * {
 }
 @media screen and (min-width: 1200px){
     .big_screens{
-        max-height: 95vh;
-        justify-content: start;
+        max-height: 100vh;
+        align-items: start;
         overflow: scroll;
-        border-radius: 1rem;
-        transform: translateY(-8rem);
     }
-    .container-fluid{
-        padding: 0 2%;
-    }
+
     .task_wrapper{
-        padding: 3rem;
-        display: flex;
         row-gap: 8rem;
         background-color: white;
         justify-content: space-between;
