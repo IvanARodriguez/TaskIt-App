@@ -283,6 +283,7 @@ label > input[type="radio"]:checked + * {
     justify-content: center;
     row-gap: 5rem;
     background-color: white;
+    margin-top: 11rem;
 }
 
 .task_title{
@@ -389,7 +390,6 @@ label > input[type="radio"]:checked + * {
     color: white;
 }
 
-/* media query */
 
 .card_date{
     text-align: center;
@@ -403,6 +403,7 @@ label > input[type="radio"]:checked + * {
     font-weight: bold;
 }
 
+/* media query */
 @media screen and (min-width: 768px){
     .card_date{
         text-align: center;
@@ -443,3 +444,8 @@ label > input[type="radio"]:checked + * {
         font-weight: bold;
     }
 }
+@media screen and (max-width: 768px){
+    .task_wrapper {
+      margin-top: 2rem;
+    }
+  }
