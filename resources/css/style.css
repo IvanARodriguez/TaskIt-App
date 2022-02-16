@@ -3,10 +3,12 @@
     padding: 0;
     box-sizing: border-box !important;
 }
+
 body{
     background-color: #021f54;
     color: #ffffff;
 }
+
 input::placeholder{
     color: rgb(193, 193, 193) !important;
 }
@@ -30,9 +32,11 @@ input::placeholder{
     outline: 1px solid rgba( 255, 255, 255, 0.18 );
     color: #fff;
 }
+
 #ui-datepicker-div { 
     display: none; 
 }
+
 .ui-datepicker .ui-datepicker-header {
     background-color: transparent;
     color: #fff;
@@ -40,24 +44,28 @@ input::placeholder{
     font-weight: normal;
     text-transform: uppercase;
 }
+
 .ui-datepicker-calendar{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .ui-datepicker-calendar tbody, 
 .ui-datepicker-calendar thead{
     text-align: center;
     width: 100%;
 
 }
+
 .ui-datepicker-calendar thead{
     height: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .ui-datepicker-calendar tbody tr, 
 .ui-datepicker-calendar thead tr{
     width: 100%;
@@ -68,6 +76,7 @@ input::placeholder{
     gap: .6rem;
     padding-bottom: 1rem;
 }
+
 .ui-datepicker-next,
 .ui-datepicker-prev{
     background-color: #ff8500 !important;
@@ -80,10 +89,12 @@ input::placeholder{
     max-width: 40px;
     transition: left 130ms ease-in-out;
 }
+
 .ui-datepicker-next:hover,
 .ui-datepicker-prev:hover{
     border: none;
 }
+
 .ui-datepicker-next span {
     background-image: url("../../resources/images/chevron_right_white_24dp.svg") !important;
     background-position: center !important;
@@ -97,6 +108,7 @@ input::placeholder{
 .ui-datepicker-calendar thead tr th{
     font-weight: normal;
 }
+
 .ui-datepicker-calendar tbody tr td{
     font-weight: normal;
     background-color: transparent;
@@ -108,12 +120,14 @@ input::placeholder{
     text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.5);
     transition: background-color .4s;
 }
+
 .ui-datepicker-calendar tbody tr td:hover{
     background-color: #484848b8;
     outline: 1px solid #777;
     cursor: pointer;
     border-radius: .3rem;
 }
+
 .ui-widget-content .ui-state-default{
     padding: 1;
     text-align: center;
@@ -121,16 +135,19 @@ input::placeholder{
     border: none;
     color: white;
 }
+
 .ui-datepicker-current-day {
     background-color: #ff8500 !important;
     border-radius: .3rem;
 }
+
 .ui-state-highlight{
     display: flex;
     align-items: center;
     justify-content: center;
     outline: 1px solid #ff8500 !important;
 }
+
 /* Main Styling */
 .logo{
     text-align: center;
@@ -138,34 +155,42 @@ input::placeholder{
     font-weight: bold;
     color: #8cb4de;
 }
+
 /* Form Styling */
 .form-label{
     color: #91e4fb;
 }
+
 .required_signed{
     color: red;
 }
+
 .form-control{
     background-color: #154a83;
     border:none;
     color:#fff !important;
 }
+
 .form-control:focus{
     background-color: #2262a7;
 }
+
 form p{
     text-align: left;
     font-size: 2rem;
     font-weight: bold;
     color: #73a9e3;
 }
+
 /* Radio */
 .input_todo[type="radio"]{
     background-color: #3d8af7;
 }
+
 .input_review[type="radio"]{
     background-color: #fefb64;
 }
+
 .input_review[type="radio"]:checked{
     background: #444444 !important;
     position: relative;
@@ -174,6 +199,7 @@ form p{
     align-items: center;
     align-content: center;
 }
+
 .input_review[type="radio"]:checked::after{
     background: #fff647 !important;
     content: '';
@@ -182,12 +208,15 @@ form p{
     height: 60%;
     position: absolute;
 }
+
 .input_inprogress[type="radio"]{
     background-color: #7e2199;
 }
+
 .input_done[type="radio"]{
     background-color: #92d36e;
 }
+
 .input_done[type="radio"]:checked{
     background: #444444 !important;
     position: relative;
@@ -196,6 +225,7 @@ form p{
     align-items: center;
     align-content: center;
 }
+
 .input_done[type="radio"]:checked::after{
     background: #89f151 !important;
     content: '';
@@ -204,16 +234,18 @@ form p{
     height: 60%;
     position: absolute;
 }
+
 label > input[type="radio"]:checked + *::before {
     background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent)!important;
     border-color: teal;
-  }
+}
+
 label > input[type="radio"]:checked + * {
     color: teal !important;
-  }
+}
+
 /* Button */
 .btn_group{
-    /* font-size: 2rem !important; */
     display: flex; 
     flex-wrap: wrap;
     justify-content: center;
@@ -221,6 +253,7 @@ label > input[type="radio"]:checked + * {
     column-gap: .8rem;
     row-gap: .8rem;
 }
+
 .orange_fill_btn{
     font-size: 1.5rem !important;
     background-color:#ff8500 !important ;
@@ -230,6 +263,7 @@ label > input[type="radio"]:checked + * {
     text-transform: uppercase;
     border-radius:10rem;
 }
+
 .orange_outline_btn{
     font-size: 1.5rem !important;
     background-color: transparent;
@@ -250,6 +284,7 @@ label > input[type="radio"]:checked + * {
     row-gap: 5rem;
     background-color: white;
 }
+
 .task_title{
     font-weight: bold;
     color: rgb(145, 143, 143);
@@ -258,6 +293,7 @@ label > input[type="radio"]:checked + * {
     text-transform: uppercase;
     margin-bottom: 2rem;
 }
+
 .task_card{
     background-color: #fffcd6;
     color: #000;
@@ -269,12 +305,14 @@ label > input[type="radio"]:checked + * {
     padding: 1rem;
     box-shadow: 0px 3px .4rem  rgba(0, 0, 0, 0.375);
 }
+
 .card_date.due_soon{
     display: inline-block;
     background-color: #ff3823;
     border-radius: .7rem;
     color: #fff;
 }
+
 .card_date{
     text-align: center;
     display: flex;
@@ -287,22 +325,27 @@ label > input[type="radio"]:checked + * {
     font-weight: bold;
     float: left;
 }
+
 .task_card h2{
     font-weight: lighter;
     z-index: 300;
     text-align: right;
 }
+
 .card_owner{
     font-weight: bold;
     color: #0844a4;
 }
+
 .task_card h3{
     padding-top: 1rem;
     font-weight: lighter
 }
+
 .card_status{
     font-weight: normal;
 }
+
 .card_buttons{
     display: flex;
     align-items: center;
@@ -312,34 +355,40 @@ label > input[type="radio"]:checked + * {
     right: -1.5rem;
     column-gap: .8rem;
 }
+
 .card_btn{
     border-radius: 50%;
     box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
 }
+
 .card_date.in_progress{
     display: inline-block;
     background-color: #d757f6;
     border-radius: .7rem;
     color: #fff;
 }
+
 .card_date.to_do{
     display: inline-block;
     background-color:#3d8af7;
     border-radius: .7rem;
     color: #fff;
 }
+
 .card_date.review{
     display: inline-block;
     background-color:#fefb64;
     border-radius: .7rem;
     color: rgb(14, 13, 13);
 }
+
 .card_date.done{
     display: inline-block;
     background-color:#92d36e;
     border-radius: .7rem;
     color: white;
 }
+
 /* media query */
 
 .card_date{
@@ -353,6 +402,7 @@ label > input[type="radio"]:checked + * {
     overflow: hidden;
     font-weight: bold;
 }
+
 @media screen and (min-width: 768px){
     .card_date{
         text-align: center;
@@ -368,6 +418,7 @@ label > input[type="radio"]:checked + * {
         font-weight: lighter;
     }
 }
+
 @media screen and (min-width: 1200px){
     .big_screens{
         max-height: 100vh;
