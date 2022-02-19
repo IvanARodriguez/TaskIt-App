@@ -12,6 +12,59 @@ body{
 input::placeholder{
     color: rgb(193, 193, 193) !important;
 }
+/* Home Section styling */
+.flex_col {
+    flex-direction: column;
+}
+
+.home_section{
+    row-gap: 1rem;
+}
+
+.home_section img{
+    max-width: 120px;
+}
+
+.welcome_text{
+    transform: translateX(100vw); 
+    transition: opacity 1s ease-in-out 1s,transform 2s ease-in-out .5s;
+    opacity: 0;
+}
+
+.logo {
+    row-gap: 1rem;
+}
+
+.logo h2{
+    color:#636363;
+    font-weight: bold;
+}
+
+.logo h2 span{
+    color: #44a2f8;
+}
+
+.home_btn i {
+    font-weight: bolder;
+    padding-right: .5rem;
+}
+.home_btn {
+    width: 100%;
+}
+
+
+.home_btn_orange {
+    background-color: #ff8500;
+
+}
+.home_btn_blue {
+    background-color: #1c61ab;
+    
+}
+
+
+
+
 
 /* DatePicker calendar style */
 .ui-widget.ui-widget-content{
