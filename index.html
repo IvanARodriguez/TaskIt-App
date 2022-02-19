@@ -12,24 +12,24 @@
     <link href="resources/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <main>
-            <div class="home_section flex_col vw-100 vh-100 d-flex justify-content-center align-items-center bg-light text-dark">
-                <h1 class="welcome_text display-3 text-secondary">welcome back</h1>
-                <div class="logo flex_col d-flex justify-content-center align-items-center">
-                    <img src="resources/images/Taskit_logo.png" alt="Taskit logo">
-                    <h2>TASK<span>IT</span></h2>
-                </div>
-                <div class="flex_col d-flex justify-content-center align-items-center">
-                    <a class=" home_btn btn mb-3 home_btn_orange text-white" href="#form_section"><i class="bi bi-card-list"></i> CREATE TASK</a>
-                    <a class=" home_btn btn  home_btn_blue text-white" href="#view_section"><i class="bi bi-search"></i> VIEW TASK</a>
-                </div>
+    <main>
+        <div class="home_section flex_col vh-100 d-flex justify-content-center align-items-center bg-light text-dark">
+            <h1 class="welcome_text display-1 text-secondary">Welcome</h1>
+            <div class="logo flex_col d-flex justify-content-center align-items-center">
+                <img src="resources/images/Taskit_logo.png" alt="Taskit logo">
+                <h2>TASK<span>IT</span></h2>
             </div>
-        </main>
+            <div class="flex_col d-flex justify-content-center align-items-center">
+                <a class=" home_btn btn mb-3 home_btn_orange text-white" href="#form_section"><i class="bi bi-card-list"></i> CREATE TASK</a>
+                <a class=" home_btn btn  home_btn_blue text-white" href="#view_section"><i class="bi bi-search"></i> VIEW TASK</a>
+            </div>
+        </div>
+    </main>
+    <div class="container">
  <!-- form control/input with calendar -->
         <div class="row justify-content-center align-items-start">
             <form id="form_section" class="row col-xl-7 pe-lg-5 pb-5 justify-content-lg-evenly">
-                <h1 class="logo text-lg-start">TASKER</h1> 
+                <h1 class="logo text-lg-start">Add Task</h1> 
                 <div class="col-md-6 pe-lg-5">
                     <div class="mb-3">
                         <input type="date" hidden class="form-control" id="cal_datepicker" required >
