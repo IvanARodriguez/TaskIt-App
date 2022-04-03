@@ -31,8 +31,8 @@ input::placeholder{
 }
 
 .welcome_text{
-    /* transform: translateX(100vw);  */
-    transition: opacity 1s ease-in-out 1s,transform 2s ease-in-out .5s;
+    /* transform: translateX(100vw); */
+    transition: opacity 1s ease-in-out 1s, transform 2s ease-in-out .5s;
     opacity: 0;
     position: absolute;
     top: 10%;
