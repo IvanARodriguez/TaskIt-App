@@ -28,31 +28,58 @@
     <div class="container">
  <!-- form control/input with calendar -->
         <div class="row justify-content-center align-items-start">
-            <form id="form_section" class="row col-xl-7 pe-lg-5 pb-5 justify-content-lg-evenly">
+            <form id="form_section" class="row col-xl-7 pe-lg-5 pb-5 justify-content-lg-evenly g-3 needs-validation" novalidate>
                 <h1 class="logo text-lg-start">Add Task</h1> 
                 <div class="col-md-6 pe-lg-5">
                     <div class="mb-3">
                         <input type="date" hidden class="form-control" id="cal_datepicker" required >
                         <label for="datepicker" class="form-label">Choose Due Date <span class="required_signed">*</span></label>
                          <div id="datepicker" role=""></div>
+                         
+                         
                     </div>
                     <div class="mb-3">
                      <label for="AssignTo" class="form-label">Assign To <span class="required_signed">*</span></label>
                      <input type="text" class="form-control" id="AssignTo" placeholder="Enter Name" required>
+                     <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please Assign!
+                      </div>
                    </div>
                     <div class="mb-3">
                      <label for="TaskRole" class="form-label">Task Role <span class="required_signed">*</span></label>
                      <input type="text" class="form-control" id="TaskRole" placeholder="Enter Role" required>
+                     <div class="valid-feedback">
+                        Great!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please Add Task-Role!
+                      </div>
                    </div>
+                   
                 </div>
                 <div class="col-md-6 col-xl-5">
                     <div class="mb-3">
                      <label for="TaskName" class="form-label">Task Name <span class="required_signed">*</span></label>
                      <input type="text" class="form-control" id="TaskName" placeholder="What Need To Be Done?" required>
+                     <div class="valid-feedback">
+                        Awesome!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please Add Task-Name!
+                      </div>
                    </div>
                    <div class="mb-3">
                      <label for="Description" class="form-label">Description <span class="required_signed">*</span> </label>
                      <textarea class="form-control" id="Description" rows="4" required></textarea>
+                     <div class="valid-feedback">
+                        Pretty much done!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please Add Description!
+                      </div>
                    </div>
                    <div class="mb-3">
                      <label for="Notes" class="form-label">Notes (Optional)</label>
@@ -179,6 +206,8 @@
         </div>
     </div>
 
+  
+ 
    <!-- Footer -->
     <script src="resources/js/taskManager.js"></script>
     <script src="resources/js/index.js"></script>
