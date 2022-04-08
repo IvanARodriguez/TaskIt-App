@@ -28,7 +28,7 @@
     <div class="container">
  <!-- form control/input with calendar -->
         <div class="row justify-content-center align-items-start">
-            <form id="form_section" class="row col-xl-7 pe-lg-5 pb-5 justify-content-lg-evenly g-3 needs-validation" novalidate>
+            <form id="form_section" class="row col-xl-7 pe-lg-5 pb-5 justify-content-lg-evenly g-3 needs-validation"  novalidate>
                 <h1 class="logo text-lg-start">Add Task</h1> 
                 <div class="col-md-6 pe-lg-5">
                     <div class="mb-3">
@@ -88,19 +88,19 @@
                    <p>STATUS</p>
                    <div class="row pb-3 w-100">
                            <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="ToDo" value="option1" checked="checked">
+                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="ToDo" value="To do" checked="checked">
                              <label class="form-check-label" for="ToDo" >To Do</label>
                            </div>
                            <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input input_inprogress" type="radio" name="inlineRadioOptions" id="InProgress" value="option2">
+                             <input class="form-check-input input_inprogress" type="radio" name="inlineRadioOptions" id="InProgress" value="Inprogress">
                              <label class="form-check-label" for="InProgress">In Progress</label>
                            </div>
                            <div class="form-check form-check-inline col-md-4 col-sm-12  w-auto" >
-                            <input class="form-check-input input_review" type="radio" name="inlineRadioOptions" id="Review" value="option3">
+                            <input class="form-check-input input_review" type="radio" name="inlineRadioOptions" id="Review" value="Review">
                             <label class="form-check-label" for="Review">Review</label>
                           </div>
                           <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto">
-                            <input class="form-check-input input_done" type="radio" name="inlineRadioOptions" id="Done" value="option4">
+                            <input class="form-check-input input_done" type="radio" name="inlineRadioOptions" id="Done" value="Done">
                             <label class="form-check-label" for="Done">Done</label>
                           </div>
                    </div>
@@ -227,7 +227,7 @@
         
         $('#datepicker').change(function () {
             $('#cal_datepicker').val($('#datepicker').datepicker().val());
-            console.log($('#cal_datepicker').datepicker().val())
+           
         });
       })
     </script>

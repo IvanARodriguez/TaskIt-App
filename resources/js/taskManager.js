@@ -1,7 +1,7 @@
    export class TaskManager {
-    constructor(tasks=[], currentId = 0){
+    constructor(tasks = [], currentId = 0){
         this.tasks = tasks;
-        this.currentId = 0;
+        this.currentId = currentId;
     }
 
     addTask(taskName, description, assignedTo, dueDate, taskStatus="Todo"){
@@ -23,8 +23,3 @@
 }
 
 
-const newTaskMan= new TaskManager();
-
-newTaskMan.addTask("feed your fish","dont over feed your fishes","Ivan",new Date().toDateString());
-
-console.log(newTaskMan.tasks)
