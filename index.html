@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link href="resources/css/style.css" rel="stylesheet">
 </head>
-<body>
-    <main>
-        <div class="home_section flex_col vh-100 d-flex justify-content-center align-items-center bg-light text-dark">
+<body class="container-flex">
+  <div class="row p-0 m-0 min-vh-100">
+    <main class="col-12 p-0 intro_screen">
+        <div class="home_section flex_col vh-100 d-flex justify-content-center align-items-center text-light">
             <h1 class="welcome_text display-1 text-secondary">Welcome</h1>
             <div class="logo flex_col d-flex justify-content-center align-items-center">
                 <img src="resources/images/Taskit_logo.png" alt="TaskIT logo">
@@ -25,21 +26,30 @@
             </div>
         </div>
     </main>
-    <div class="container">
+    <div class="col-xl-2 pt-5 navigation p-0">
+      <div class="logo flex_col d-flex justify-content-center align-items-center">
+        <img src="resources/images/Taskit_logo.png" alt="TaskIT logo" width="80px">
+        <h2>TASK<span>IT</span></h2>
+    </div>
+      <nav class="navbar navbar-dark">
+          <ul class="navbar-nav d-flex w-100 gap-4">
+            <li class="nav-item"><a href="#" class="nav-link current py-lg-3 p-md-3 w-100 border-end border-5"><i class="bi bi-grid-1x2-fill me-3"></i> DASHBOARD</a></li>
+            <li class="nav-item "><a href="#" class="nav-link py-lg-3 p-md-3"><i class="bi bi-pc-display me-3"></i> DEVELOPERS</a></li>
+            <li class="nav-item "><a href="#" class="nav-link py-lg-3 p-md-3"><i class="bi bi-easel2-fill me-3"></i> INSIGHTS</a></li>
+          </ul>
+      </nav>
+    </div>
  <!-- form control/input with calendar -->
-        <div class="row justify-content-center align-items-start">
-            <form id="form_section" class="row col-xl-7 pe-lg-5 pb-5 justify-content-lg-evenly g-3 needs-validation"  novalidate>
-                <h1 class="logo text-lg-start">Add Task</h1> 
-                <div class="col-md-6 pe-lg-5">
-                    <div class="mb-3">
-                        <input type="date" hidden class="form-control" id="cal_datepicker" required >
-                         <div id="datepicker" role=""></div>
-                         
-                         
+    <div class="row p-0 m-0 col-xl-7 pb-5 gy-5 mt-5">
+      <form id="form_section" class="row needs-validation justify-content-lg-around justify-content-center mt-5" novalidate>
+                <div class="col-md-6 col-xl-4">
+                    <div class="mb-3 w-100">
+                      <input type="date" hidden class="form-control" id="cal_datepicker" required >
+                      <div id="datepicker" role="" class="w-100"></div>                        
                     </div>
                     <div class="mb-3">
-                     <label for="AssignTo" class="form-label">Assign To <span class="required_signed">*</span></label>
-                     <input type="text" class="form-control" id="AssignTo" placeholder="Enter Name" required>
+                     <label for="AssignTo" class="form-label text-orange">Assign To <span class="required_signed">*</span></label>
+                     <input type="text" class="form-control py-2" id="AssignTo" placeholder="Enter Name" required>
                      <div class="valid-feedback">
                         Looks good!
                       </div>
@@ -49,7 +59,7 @@
                    </div>
                     <div class="mb-3">
                      <label for="TaskRole" class="form-label">Task Role <span class="required_signed">*</span></label>
-                     <input type="text" class="form-control" id="TaskRole" placeholder="Enter Role" required>
+                     <input type="text" class="form-control py-2" id="TaskRole" placeholder="Enter Role" required>
                      <div class="valid-feedback">
                         Great!
                       </div>
@@ -57,12 +67,22 @@
                         Please Add Task-Role!
                       </div>
                    </div>
-                   
+                   <span class="d-block mb-3 display-4 fw-bolder opacity-25">STATUS</span>
+                   <div class="row pb-3">
+                           <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
+                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="ToDo" value="To do" checked="checked">
+                             <label class="form-check-label" for="ToDo" >To Do</label>
+                           </div>
+                           <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
+                             <input class="form-check-input input_urgent" type="radio" name="inlineRadioOptions" id="Urgent" value="To do">
+                             <label class="form-check-label" for="Urgent" >Urgent</label>
+                           </div>
+                   </div>
                 </div>
-                <div class="col-md-6 col-xl-5">
+                <div class="col-md-6 col-xl-6 row align-items-start">
                     <div class="mb-3">
                      <label for="TaskName" class="form-label">Task Name <span class="required_signed">*</span></label>
-                     <input type="text" class="form-control" id="TaskName" placeholder="What Need To Be Done?" required>
+                     <input type="text" class="form-control py-2" id="TaskName" placeholder="What Need To Be Done?" required>
                      <div class="valid-feedback">
                         Awesome!
                       </div>
@@ -72,7 +92,7 @@
                    </div>
                    <div class="mb-3">
                      <label for="Description" class="form-label">Description <span class="required_signed">*</span> </label>
-                     <textarea class="form-control" id="Description" rows="4" required></textarea>
+                     <textarea class="form-control" id="Description" rows="10" required></textarea>
                      <div class="valid-feedback">
                         Pretty much done!
                       </div>
@@ -82,29 +102,10 @@
                    </div>
                    <div class="mb-3">
                      <label for="Notes" class="form-label">Notes (Optional)</label>
-                     <textarea class="form-control" id="Notes" rows="4"></textarea>
-                   </div>
-                   <p>STATUS</p>
-                   <div class="row pb-3 w-100">
-                           <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="ToDo" value="To do" checked="checked">
-                             <label class="form-check-label" for="ToDo" >To Do</label>
-                           </div>
-                           <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input input_inprogress" type="radio" name="inlineRadioOptions" id="InProgress" value="Inprogress">
-                             <label class="form-check-label" for="InProgress">In Progress</label>
-                           </div>
-                           <div class="form-check form-check-inline col-md-4 col-sm-12  w-auto" >
-                            <input class="form-check-input input_review" type="radio" name="inlineRadioOptions" id="Review" value="Review">
-                            <label class="form-check-label" for="Review">Review</label>
-                          </div>
-                          <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto">
-                            <input class="form-check-input input_done" type="radio" name="inlineRadioOptions" id="Done" value="Done">
-                            <label class="form-check-label" for="Done">Done</label>
-                          </div>
+                     <textarea class="form-control" id="Notes" rows="10"></textarea>
                    </div>
                 </div>
-                <div class="btn_group pt-5 d-flex justify-content-center align-items-start col-12">
+                <div class="btn_group pt-5 d-flex justify-content-center align-items-start col-12 align-self-baseline">
                   <button type="submit" class="btn btn-primary btn-sm orange_fill_btn pe-3 ps-3"><i class="bi bi-plus-circle-fill"></i> add Task</button>
                   <button type="reset" class="btn btn-secondary btn-sm orange_outline_btn pe-5 ps-5">Reset</button>
                  </div>
@@ -112,23 +113,28 @@
                  <div class="notification text-success hide">
                      <i class="bi bi-check-circle-fill display-1 checked_circle"></i>
                  </div>
-            </form>
-            <!-- Task layouts -->
-            <div id="view_section"class="task_wrapper row col-xl-5 col-sm-12 big_screens bg-dark ">
-                <h3>My Tasks(<span id="task_counter"></span>)</h3>
-              <ul id="tasks_group">
-                  <!-- inserting collection of task -->
-              </ul>
-            </div>
-        </div>
+      </form>
     </div>
+    <!-- Task layouts -->
+    <div id="view_section"class="row p-0 col-xl-3 task_wrapper big_screens d-flex justify-content-center align-items-stretch">
+      <div class="task_box my-5" >
+        <h3 class="mb-5">My Tasks (<span id="task_counter"></span>)</h3>
+        <ul id="tasks_group">
+          <!-- inserting collection of task -->
+        </ul>
+      </div>
+      <h2 class="fw-bolder opacity-25 display-4 priority_header">PRIORITY</h2>
+      <div class="task_box">
+        <ul id="tasks_group">
+          <!-- inserting collection of task -->
+        </ul>
+      </div>
+    </div>
+  </div>
 
-  
- 
    <!-- Footer -->
     
     <script src="resources/js/index.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
     <script>
@@ -136,15 +142,9 @@
       $(function() {
         $('#datepicker').datepicker({
             dateFormat: "yy-mm-dd"
-        })
-        
-        if($('#cal_datepicker').datepicker().val() == ""){
-            console.log('date input is empty')
-        }
-        
+        })        
         $('#datepicker').change(function () {
             $('#cal_datepicker').val($('#datepicker').datepicker().val());
-           
         });
       })
     </script>
