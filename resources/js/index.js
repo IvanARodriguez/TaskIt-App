@@ -7,7 +7,7 @@ const taskRole = document.getElementById("TaskRole");
 const taskName = document.getElementById("TaskName");
 const description = document.getElementById("Description");
 const notes = document.getElementById("Notes");
-const status = document.getElementsByName("inlineRadioOptions");
+const status = document.getElementsByName("inlineRadioOptions")
 const selectedStatus = () =>{
 //get the checked status
   for (let i = 0; i < status.length; i++) {
@@ -20,42 +20,40 @@ const selectedStatus = () =>{
 }
 
 const newTaskManager = new TaskManager();
+
 newTaskManager.addTask(
   "Take dog out", 
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
-  "Ivan R.",
-  "developer",
-  "");
-newTaskManager.addTask(
-  "feed the fish", 
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
-  "Juan",
-  "engineer",
-  "",
-  "dont over feed"
-  );
-newTaskManager.addTask(
-  "Clean the bed", 
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
-  "Pedro",
-  "chef",
-  "");
-//tasks template
+  "If you can go to the market and buy some chicken for dinner 🥘",
+  "Jonathan",
+  "Husband",
+  new Date().toDateString(),
+  "remember the chicken can not be over burned");
 
+newTaskManager.addTask(
+  "Feed the fish", 
+  "The fish tank doesn't have more filter, if you have a chance go to the pet store 🐠",
+  "Juan",
+  "Son",
+  new Date().toDateString(),
+  "The filter size is Medium"
+  );
+
+//tasks template
 const ul = document.getElementById("tasks_group");
 const taskCounter = document.getElementById("task_counter");
 
 //create HTML task template
 const createTaskTemplate = (task) => {
   const htmlLi = `
-    <li id="${task.id}" class="row border-bottom pb-2 border-secondary mb-3 align-items-center" >
-      <span class="col-2 d-block">${(task.id < 10) ? "0" + task.id : task.id}</span> <h4 class="col-8 fw-lighter">${task.name}</h4><a type="button" class="text-white col-2 details_viewer" ><i class="bi bi-eye-fill"></i></a>
+    <li id="${task.id}"class="row border-bottom pb-2 border-secondary mb-3 align-items-center close" >
+      <span class="col-2 d-block pb-3">${(task.id < 10) ? "0" + task.id : task.id}</span> <h4 class="col-8 fw-lighter">${task.name}</h4><a type="button" class="text-white col-2 details_viewer" ><i class="bi bi-eye-fill"></i></a>
+      <div class="bg-dark p-3 rounded mb-4 details border-left-orange">
+      <span class="fw-lighter text-end d-block">${task.dueDate}</span>
+        <h6 class="fw-light"> For:<span class=" fw-bolder "> ${task.assignedTo} </span> | <span class="text-secondary fw-light"> ${task.taskRole} </span></h6>
+        <p class="fw-lighter">${task.description}</p>
+        <p>Notes: <span class="fw-lighter">${task.notes === undefined ? "" : task.notes}</span></p>
+      </div>
     </li> 
-    <div class="bg-dark p-3 rounded mb-4 task_details hide">
-      <h6 class="fw-light"> For:<span class=" fw-bolder "> ${task.assignedTo} </span> | <span class="text-secondary fw-light"> ${task.taskRole} </span></h6>
-      <p>${task.description}</p>
-      <p>Notes: ${task.notes === undefined ? "" : task.notes}</p>
-    </div>
     `;
   ul.insertAdjacentHTML("beforeend", htmlLi);
   taskCounter.innerHTML = newTaskManager.tasks.length;
@@ -65,30 +63,26 @@ newTaskManager.tasks.forEach(task => {
   createTaskTemplate(task);
 } );
 
-const tasksDetails = document.getElementsByClassName("task_details");
-const detailViewerBtn = document.querySelectorAll(".details_viewer");
-
+//Hide or show tasks details
 function toggleDetails(){
-  
-  for (let i = 0; i < tasksDetails.length; i++) {
-    let itemClass = tasksDetails[i].className;
-    tasksDetails[i].className = "bg-dark p-3 rounded mb-4 details_viewer hide"
-    if(itemClass === "bg-dark p-3 rounded mb-4 details_viewer hide"){
-      tasksDetails[i].className = "bg-dark p-3 rounded mb-4 details_viewer show"
-    }
+  let itemClass = this.parentNode.className;
+  if(itemClass === "row border-bottom pb-2 border-secondary mb-3 align-items-center close"){
+    this.parentNode.className = "row border-bottom pb-2 border-secondary mb-3 align-items-center open"
+  } else {
+    this.parentNode.className = "row border-bottom pb-2 border-secondary mb-3 align-items-center close"
   }
-  console.log("im listening");
+};
+let detailViewerBtn = document.querySelectorAll(".details_viewer");
+for (let i = 0; i < detailViewerBtn.length; i++) {
+  detailViewerBtn[i].addEventListener("click", toggleDetails);
 }
-detailViewerBtn.forEach((item) =>{
-  item.addEventListener("click", toggleDetails);
-})
 
 //getting the form inputs
 const addNewTask=(event)=>{
   event.preventDefault()
   //validate before submitting
   if(taskName.value !== "" && taskRole.value !== "" && description.value !== "" && assignTo.value !== "" ){
-   newTaskManager.addTask( taskName.value, description.value, assignTo.value, dueDate.value, selectedStatus() )
+   newTaskManager.addTask( taskName.value, description.value, assignTo.value, taskRole.value, dueDate.value, notes.value,selectedStatus() )
    createTaskTemplate(newTaskManager.tasks[newTaskManager.tasks.length-1]);
     //clear the input fields
      taskName.value = "";
@@ -101,6 +95,12 @@ const addNewTask=(event)=>{
     } else if(!form.checkValidity()) {
       event.stopPropagation()
       form.classList.add('was-validated')
+  }
+
+  //Add an event listener to all task viewer links
+  detailViewerBtn = document.querySelectorAll(".details_viewer")
+  for (let i = 0; i < detailViewerBtn.length; i++) {
+    detailViewerBtn[i].addEventListener("click", toggleDetails);
   }
 }
 

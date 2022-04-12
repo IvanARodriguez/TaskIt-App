@@ -379,10 +379,23 @@ label > input[type="radio"]:checked + * {
 }
 
 .priority_header{
-    max-height: fit-content;
-    justify-self: start;
+    height: fit-content;
 }
 
+.close .details{
+    transform: translateY(-100%);
+    display: none;
+}
+
+.open .details{
+    transform: translateY(0);
+    visibility: visible;
+    transition: height .3s ease-in-out;
+    transition: transform 1s ease-in-out, display  3s ease-out 1s;
+}
+.border-left-orange{
+    border-left: 3px solid var(--orange-color);
+}
 /* notification */
 .notification{
     width:100vw;
@@ -415,9 +428,9 @@ label > input[type="radio"]:checked + * {
 
 @media screen and (min-width: 1200px){
     .big_screens{
-        max-height: 100vh;
-        align-items: start;
         overflow: scroll;
+        scrollbar-width: 0;
+        scrollbar-base-color: transparent;
     }
     .logo img{
         max-width: 250px;
