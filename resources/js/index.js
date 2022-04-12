@@ -7,7 +7,7 @@ const taskRole = document.getElementById("TaskRole");
 const taskName = document.getElementById("TaskName");
 const description = document.getElementById("Description");
 const notes = document.getElementById("Notes");
-const status = document.getElementsByName("inlineRadioOptions");
+const status = document.getElementsByName("inlineRadioOptions")
 const selectedStatus = () =>{
 //get the checked status
   for (let i = 0; i < status.length; i++) {
@@ -25,7 +25,8 @@ newTaskManager.addTask(
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
   "Ivan R.",
   "developer",
-  "");
+  "",
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo,");
 newTaskManager.addTask(
   "feed the fish", 
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
@@ -66,14 +67,10 @@ newTaskManager.tasks.forEach(task => {
 } );
 
 //Hide or show tasks details
-const tasksDetails = document.getElementsByClassName("task_details");
-const detailViewerBtn = document.querySelectorAll(".details_viewer");
+let detailViewerBtn = document.querySelectorAll(".details_viewer");
 
 function toggleDetails(){
   let itemClass = this.parentNode.className;
-  for (let i = 0; i < tasksDetails.length; i++) {
-    tasksDetails[i].className = "row border-bottom pb-2 border-secondary mb-3 align-items-center close";
-  }
   if(itemClass === "row border-bottom pb-2 border-secondary mb-3 align-items-center close"){
     this.parentNode.className = "row border-bottom pb-2 border-secondary mb-3 align-items-center open"
   } else {
@@ -81,16 +78,12 @@ function toggleDetails(){
   }
 };
 
-detailViewerBtn.forEach((el) =>{
-  el.addEventListener("click", toggleDetails);
-});
-
 //getting the form inputs
 const addNewTask=(event)=>{
   event.preventDefault()
   //validate before submitting
   if(taskName.value !== "" && taskRole.value !== "" && description.value !== "" && assignTo.value !== "" ){
-   newTaskManager.addTask( taskName.value, description.value, assignTo.value, dueDate.value, selectedStatus() )
+   newTaskManager.addTask( taskName.value, description.value, assignTo.value, taskRole.value, dueDate.value, notes.value,selectedStatus() )
    createTaskTemplate(newTaskManager.tasks[newTaskManager.tasks.length-1]);
     //clear the input fields
      taskName.value = "";
@@ -103,6 +96,12 @@ const addNewTask=(event)=>{
     } else if(!form.checkValidity()) {
       event.stopPropagation()
       form.classList.add('was-validated')
+  }
+
+  //Add an event listener to all task viewer links
+  detailViewerBtn = document.querySelectorAll(".details_viewer")
+  for (let i = 0; i < detailViewerBtn.length; i++) {
+    detailViewerBtn[i].addEventListener("click", toggleDetails);
   }
 }
 

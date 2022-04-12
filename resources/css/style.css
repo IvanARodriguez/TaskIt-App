@@ -379,8 +379,7 @@ label > input[type="radio"]:checked + * {
 }
 
 .priority_header{
-    max-height: fit-content;
-    justify-self: start;
+    height: fit-content;
 }
 
 .close .details{
@@ -427,9 +426,9 @@ label > input[type="radio"]:checked + * {
 
 @media screen and (min-width: 1200px){
     .big_screens{
-        max-height: 100vh;
-        align-items: start;
         overflow: scroll;
+        scrollbar-width: 0;
+        scrollbar-base-color: transparent;
     }
     .logo img{
         max-width: 250px;
