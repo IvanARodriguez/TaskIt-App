@@ -24,16 +24,21 @@ newTaskManager.addTask(
   "Take dog out", 
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
   "Ivan R.",
+  "developer",
   "");
 newTaskManager.addTask(
   "feed the fish", 
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
-  "Juan",""
+  "Juan",
+  "engineer",
+  "",
+  "dont over feed"
   );
 newTaskManager.addTask(
   "Clean the bed", 
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
   "Pedro",
+  "chef",
   "");
 //tasks template
 
@@ -44,8 +49,14 @@ const taskCounter = document.getElementById("task_counter");
 const createTaskTemplate = (task) => {
   const htmlLi = `
     <li id="${task.id}" class="row border-bottom pb-2 border-secondary mb-3 align-items-center" >
-      <span class="col-2 d-block">${(task.id < 10) ? "0" + task.id : task.id}</span> <h4 class="col-8 fw-lighter">${task.name}</h4><a type="button" class="text-white col-2"><i class="bi bi-eye-fill"></i></a>
-    </li>`;
+      <span class="col-2 d-block">${(task.id < 10) ? "0" + task.id : task.id}</span> <h4 class="col-8 fw-lighter">${task.name}</h4><a type="button" class="text-white col-2 details_viewer" ><i class="bi bi-eye-fill"></i></a>
+    </li> 
+    <div class="bg-dark p-3 rounded mb-4 task_details hide">
+      <h6 class="fw-light"> For:<span class=" fw-bolder "> ${task.assignedTo} </span> | <span class="text-secondary fw-light"> ${task.taskRole} </span></h6>
+      <p>${task.description}</p>
+      <p>Notes: ${task.notes === undefined ? "" : task.notes}</p>
+    </div>
+    `;
   ul.insertAdjacentHTML("beforeend", htmlLi);
   taskCounter.innerHTML = newTaskManager.tasks.length;
 }
@@ -53,6 +64,24 @@ const createTaskTemplate = (task) => {
 newTaskManager.tasks.forEach(task => {
   createTaskTemplate(task);
 } );
+
+const tasksDetails = document.getElementsByClassName("task_details");
+const detailViewerBtn = document.querySelectorAll(".details_viewer");
+
+function toggleDetails(){
+  
+  for (let i = 0; i < tasksDetails.length; i++) {
+    let itemClass = tasksDetails[i].className;
+    tasksDetails[i].className = "bg-dark p-3 rounded mb-4 details_viewer hide"
+    if(itemClass === "bg-dark p-3 rounded mb-4 details_viewer hide"){
+      tasksDetails[i].className = "bg-dark p-3 rounded mb-4 details_viewer show"
+    }
+  }
+  console.log("im listening");
+}
+detailViewerBtn.forEach((item) =>{
+  item.addEventListener("click", toggleDetails);
+})
 
 //getting the form inputs
 const addNewTask=(event)=>{

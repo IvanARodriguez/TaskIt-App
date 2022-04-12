@@ -383,17 +383,6 @@ label > input[type="radio"]:checked + * {
     justify-self: start;
 }
 
-.card_buttons{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    position: relative;
-    bottom:-1.7rem;
-    right: -1.5rem;
-    column-gap: .8rem;
-}
-
-
 /* notification */
 .notification{
     width:100vw;
@@ -407,6 +396,9 @@ label > input[type="radio"]:checked + * {
 .checked_circle{
     text-shadow: 3px 3px 5px #000;
     
+}
+.show{
+    display: block;
 }
 
 .hide{
