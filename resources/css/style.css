@@ -11,12 +11,21 @@ body{
 
 :root{
     --orange-color: #ff8500;
-    --main-grey: #44444441;
+    --main-grey: #4444446d;
 }
 
 input::placeholder{
     color: rgb(193, 193, 193) !important;
 }
+
+.intro_screen{
+    display: none;
+}
+
+.text-orange{
+    color: var(--orange-color);
+}
+
 /* Home Section styling */
 .flex_col {
     flex-direction: column;
@@ -41,27 +50,28 @@ input::placeholder{
     opacity: 0;
     position: absolute;
     top: 10%;
-
 }
 
 .logo {
     row-gap: 1rem;
+    margin-bottom: 5rem;
 }
 
 .logo h2{
-    color:#636363;
+    color:#b8b8b8;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .logo h2 span{
-    color: #44a2f8;
+    color: var(--orange-color);
 }
 
 .home_btn i {
     font-weight: bolder;
     padding-right: .5rem;
 }
+
 .home_btn {
     width: 100%;
 }
@@ -73,22 +83,26 @@ input::placeholder{
 }
 .home_btn_blue {
     background-color: #1c61ab;
-    
 }
 
 
-
-
+/* Navigation */
+.current{
+    color: var(--orange-color) !important;
+    border-color: var(--orange-color) !important;
+    background-color: #4e4e4e86;
+}
+.navigation{
+    background-color: #1c1c1c;
+}
 
 /* DatePicker calendar style */
-#datepicker{
-}
 
 .ui-widget.ui-widget-content{
     border:none !important;
     padding: 1rem;
-    width: fit-content;
-    margin: 0 auto;
+    min-width: fit-content;
+    width: 100%;
     row-gap: 1rem;
     display: flex;
     justify-content: center;
@@ -216,7 +230,6 @@ input::placeholder{
 /* Main Styling */
 .logo{
     text-align: center;
-    padding: 3rem 0;
     font-weight: bold;
     color: #8cb4de;
 }
@@ -224,11 +237,10 @@ input::placeholder{
 /* Form Styling */
 #form_section{
     position: relative;
-    
 }
 
 .form-label{
-    color: #91e4fb;
+    color: var(--orange-color);
 }
 
 .required_signed{
@@ -358,76 +370,17 @@ label > input[type="radio"]:checked + * {
 }
 
 /* Task card styling */
-.task_wrapper{
-    padding: 6rem 1rem;
-    display: flex;
-    column-gap: 3rem;
-    align-items: center;
-    justify-content: center;
-    row-gap: 5rem;
-    background-color: white;
-    margin-top: 11rem;
+.task_box{
+    background-color: var(--main-grey);
+    overflow-y: scroll;
+    border-radius: 2rem;
+    padding: 2rem;
+    height: 40%;
 }
 
-.task_title{
-    font-weight: bold;
-    color: rgb(145, 143, 143);
-    font-size: 2.3rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-}
-
-.task_card{
-    background-color: #fffcd6;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: relative;
-    border-radius: .7rem;
-    padding: 1rem;
-    box-shadow: 0px 3px .4rem  rgba(0, 0, 0, 0.375);
-}
-
-.card_date.due_soon{
-    display: inline-block;
-    background-color: #ff3823;
-    border-radius: .7rem;
-    color: #fff;
-}
-
-.card_date{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .2rem;
-    box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
-    min-width: 5.5rem;
-    min-height: 5.5rem;
-    font-weight: bold;
-    float: left;
-}
-
-.task_card h2{
-    font-weight: lighter;
-    z-index: 300;
-    text-align: right;
-}
-
-.card_owner{
-    font-weight: bold;
-    color: #0844a4;
-}
-
-.task_card h3{
-    padding-top: 1rem;
-    font-weight: lighter
-}
-
-.card_status{
-    font-weight: normal;
+.priority_header{
+    max-height: fit-content;
+    justify-self: start;
 }
 
 .card_buttons{
@@ -440,51 +393,6 @@ label > input[type="radio"]:checked + * {
     column-gap: .8rem;
 }
 
-.card_btn{
-    border-radius: 50%;
-    box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
-}
-
-.card_date.in_progress{
-    display: inline-block;
-    background-color: #d757f6;
-    border-radius: .7rem;
-    color: #fff;
-}
-
-.card_date.to_do{
-    display: inline-block;
-    background-color:#3d8af7;
-    border-radius: .7rem;
-    color: #fff;
-}
-
-.card_date.review{
-    display: inline-block;
-    background-color:#fefb64;
-    border-radius: .7rem;
-    color: rgb(14, 13, 13);
-}
-
-.card_date.done{
-    display: inline-block;
-    background-color:#92d36e;
-    border-radius: .7rem;
-    color: white;
-}
-
-
-.card_date{
-    text-align: center;
-    padding: .2rem;
-    position:absolute;
-    top:-25%;
-    box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
-    width: 5.5rem;
-    height: 5.5rem;
-    overflow: hidden;
-    font-weight: bold;
-}
 
 /* notification */
 .notification{
@@ -507,25 +415,10 @@ label > input[type="radio"]:checked + * {
 }
 
 /* media query */
-@media screen and (min-width: 768px){
-    .card_date{
-        text-align: center;
-        margin: 0 auto;
-        padding: .2rem;
-        position: relative;
+@media screen and (max-width: 440px) {
+    .intro_screen{
+        display: block;
     }
-    .task_card h2{
-        display: inline-block;
-        position: relative;
-        margin-top: 2rem;
-        left: 0;
-        font-weight: lighter;
-    }
-    
-}
-
-@media screen and (min-width:) {
-    
 }
 
 @media screen and (min-width: 1200px){
@@ -533,23 +426,6 @@ label > input[type="radio"]:checked + * {
         max-height: 100vh;
         align-items: start;
         overflow: scroll;
-    }
-
-    .task_wrapper{
-        row-gap: 8rem;
-        background-color: white;
-        justify-content: space-between;
-    }
-    .card_date{
-        text-align: center;
-        padding: .2rem;
-        position:absolute;
-        top:-25%;
-        box-shadow: 3px 3px .4rem  rgba(0, 0, 0, 0.479);
-        width: 5.5rem;
-        height: 5.5rem;
-        overflow: hidden;
-        font-weight: bold;
     }
     .logo img{
         max-width: 250px;
@@ -566,8 +442,3 @@ label > input[type="radio"]:checked + * {
         padding: .5rem 2rem;
     }
 }
-@media screen and (max-width: 768px){
-    .task_wrapper {
-      margin-top: 2rem;
-    }
-  }

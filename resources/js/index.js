@@ -20,12 +20,21 @@ const selectedStatus = () =>{
 }
 
 const newTaskManager = new TaskManager();
-newTaskManager.addTask("feed the fish", "feed fish at 3pm","me","");
-newTaskManager.addTask("feed the fish", "feed fish at 3pm","me","");
-newTaskManager.addTask("feed the fish", "feed fish at 3pm","me","");
-newTaskManager.addTask("feed the fish", "feed fish at 3pm","me","");
-newTaskManager.addTask("feed the fish", "feed fish at 3pm","me","");
-newTaskManager.addTask("feed the fish", "feed fish at 3pm","me","");
+newTaskManager.addTask(
+  "Take dog out", 
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
+  "Ivan R.",
+  "");
+newTaskManager.addTask(
+  "feed the fish", 
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
+  "Juan",""
+  );
+newTaskManager.addTask(
+  "Clean the bed", 
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
+  "Pedro",
+  "");
 //tasks template
 
 const ul = document.getElementById("tasks_group");
@@ -33,21 +42,17 @@ const taskCounter = document.getElementById("task_counter");
 
 //create HTML task template
 const createTaskTemplate = (task) => {
-  
   const htmlLi = `
-  <li class="row border-bottom pb-2 border-secondary mb-3" >
-  <span class="col-2">${task.id}</span> <span class="col-8">${task.name}</span><i class="bi bi-eye-fill col-2"></i>
-  </li>
- `;
+    <li id="${task.id}" class="row border-bottom pb-2 border-secondary mb-3 align-items-center" >
+      <span class="col-2 d-block">${(task.id < 10) ? "0" + task.id : task.id}</span> <h4 class="col-8 fw-lighter">${task.name}</h4><a type="button" class="text-white col-2"><i class="bi bi-eye-fill"></i></a>
+    </li>`;
   ul.insertAdjacentHTML("beforeend", htmlLi);
-  
   taskCounter.innerHTML = newTaskManager.tasks.length;
 }
 
 newTaskManager.tasks.forEach(task => {
   createTaskTemplate(task);
 } );
-
 
 //getting the form inputs
 const addNewTask=(event)=>{
@@ -56,7 +61,7 @@ const addNewTask=(event)=>{
   if(taskName.value !== "" && taskRole.value !== "" && description.value !== "" && assignTo.value !== "" ){
    newTaskManager.addTask( taskName.value, description.value, assignTo.value, dueDate.value, selectedStatus() )
    createTaskTemplate(newTaskManager.tasks[newTaskManager.tasks.length-1]);
-  
+    //clear the input fields
      taskName.value = "";
      taskRole.value = "";
      description.value = "";
@@ -69,4 +74,5 @@ const addNewTask=(event)=>{
       form.classList.add('was-validated')
   }
 }
+
 form.onsubmit = addNewTask;
