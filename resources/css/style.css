@@ -383,6 +383,18 @@ label > input[type="radio"]:checked + * {
     justify-self: start;
 }
 
+.close .details{
+    transform: translateY(-100%);
+    display: none;
+}
+
+.open .details{
+    transform: translateY(0);
+    visibility: visible;
+    transition: height .3s ease-in-out;
+    transition: transform 1s ease-in-out, display  3s ease-out 1s;
+}
+
 /* notification */
 .notification{
     width:100vw;
