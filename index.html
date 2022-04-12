@@ -33,7 +33,6 @@
                 <div class="col-md-6 pe-lg-5">
                     <div class="mb-3">
                         <input type="date" hidden class="form-control" id="cal_datepicker" required >
-                        <label for="datepicker" class="form-label">Choose Due Date <span class="required_signed">*</span></label>
                          <div id="datepicker" role=""></div>
                          
                          
@@ -109,99 +108,17 @@
                   <button type="submit" class="btn btn-primary btn-sm orange_fill_btn pe-3 ps-3"><i class="bi bi-plus-circle-fill"></i> add Task</button>
                   <button type="reset" class="btn btn-secondary btn-sm orange_outline_btn pe-5 ps-5">Reset</button>
                  </div>
+                 <!-- notification -->
+                 <div class="notification text-success hide">
+                     <i class="bi bi-check-circle-fill display-1 checked_circle"></i>
+                 </div>
             </form>
             <!-- Task layouts -->
-            <div id="view_section"class="task_wrapper row col-xl-5 col-sm-12 big_screens ">
-              <h2 class="task_title">Progress</h2>
-              <div class="task_card  col-lg-5 col-xl-12 ">
-                  <div class="card_date due_soon col">
-                      <div class="card_month">Aug</div>
-                      <div class="card_month">5</div>
-                      <div class="card_month">Due Soon</div>
-                  </div>
-                  <h2 class="text-sm-start text-md-end">Assigned to <span class="card_owner col-lg-12">Jon Drill</span></h2>
-                  <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
-                  <ul>
-                      <li>Talk about the possibility of failure for next hearing</li>
-                  </ul>
-                  <div class="card_buttons">
-                      <button class="btn btn-sm btn-warning card_btn" Aria-label="edit button"><i class="bi bi-pencil-fill"></i></button>
-                      <button class="btn btn-sm btn-success card_btn" Aria-label="done button"><i class="bi bi-check2-all"></i></button>
-                      <button class="btn btn-sm btn-danger card_btn" Aria-label="delete button"><i class="bi bi-trash-fill"></i></button>
-                  </div>
-              </div>
-             
-              <div class="task_card col-lg-5 col-xl-12 text-start">
-                  <div class="card_date to_do">
-                      <div class="card_month">Aug</div>
-                      <div class="card_month">5</div>
-                      <div class="card_month">To Do</div>
-                  </div>
-                  <h2 class="text-sm-start">Assigned to <span class="card_owner">Jon Drill</span></h2>
-                  <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
-                  <ul>
-                      <li>Talk about the possibility of failure for next hearing</li>
-                  </ul>
-                  <div class="card_buttons">
-                      <button class="btn btn-sm btn-warning card_btn" Aria-label="edit button"><i class="bi bi-pencil-fill"></i></button>
-                      <button class="btn btn-sm btn-success card_btn" Aria-label="done button"><i class="bi bi-check2-all"></i></button>
-                      <button class="btn btn-sm btn-danger card_btn" Aria-label="delete button"><i class="bi bi-trash-fill"></i></button>
-                  </div>
-              </div>
-             
-              <div class="task_card col-lg-5 col-xl-12 text-start">
-                  <div class="card_date review">
-                      <div class="card_month">Aug</div>
-                      <div class="card_month">5</div>
-                      <div class="card_month">Review</div>
-                  </div>
-                  <h2 class="text-sm-start text-md-end">Assigned to <span class="card_owner">Jon Drill</span></h2>
-                  <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
-                  <ul>
-                      <li>Talk about the possibility of failure for next hearing</li>
-                  </ul>
-                  <div class="card_buttons">
-                      <button class="btn btn-sm btn-warning card_btn" Aria-label="edit button"><i class="bi bi-pencil-fill"></i></button>
-                      <button class="btn btn-sm btn-success card_btn" Aria-label="done button"><i class="bi bi-check2-all"></i></button>
-                      <button class="btn btn-sm btn-danger card_btn" Aria-label="delete button"><i class="bi bi-trash-fill"></i></button>
-                  </div>
-              </div>
-             
-              <div class="task_card col-lg-5 col-xl-12 text-start">
-                  <div class="card_date in_progress">
-                      <div class="card_month">Aug</div>
-                      <div class="card_month">5</div>
-                      <div class="card_month">Progress</div>
-                  </div>
-                  <h2 class="text-sm-start text-md-end">Assigned to <span class="card_owner">Jon Drill</span></h2>
-                  <h3><span class="card_status">To Do</span> | Meet with Lawyer</h3>
-                  <ul>
-                      <li>Talk about the possibility of failure for next hearing</li>
-                  </ul>
-                  <div class="card_buttons">
-                      <button class="btn btn-sm btn-warning card_btn" Aria-label="edit button"><i class="bi bi-pencil-fill"></i></button>
-                      <button class="btn btn-sm btn-success card_btn" Aria-label="done button"><i class="bi bi-check2-all"></i></button>
-                      <button class="btn btn-sm btn-danger card_btn" Aria-label="delete button"><i class="bi bi-trash-fill"></i></button>
-                  </div>
-              </div>
-             
-               <div class="task_card col-lg-5 col-xl-12 text-start">
-                  <div class="card_date done">
-                      <div class="card_month">Aug</div>
-                      <div class="card_month">5</div>
-                      <div class="card_month">Done</div>
-                  </div>
-                  <h2 class="text-sm-start text-md-end">Assigned to <span class="card_owner">Jon Drill</span></h2>
-                  <h3 class="text-smaller"><span class="card_status">Done</span> | Meet with Lawyer</h3>
-                  <ul>
-                      <li>Talk about the possibility of failure for next hearing</li>
-                  </ul>
-                  <div class="card_buttons">
-                      <button class="btn btn-sm btn-warning card_btn" Aria-label="edit button"><i class="bi bi-pencil-fill"></i></button>
-                      <button class="btn btn-sm btn-success card_btn" Aria-label="done button"><i class="bi bi-check2-all"></i></button>
-                      <button class="btn btn-sm btn-danger card_btn" Aria-label="delete button"><i class="bi bi-trash-fill"></i></button>
-                  </div>
-              </div>
+            <div id="view_section"class="task_wrapper row col-xl-5 col-sm-12 big_screens bg-dark ">
+                <h3>My Tasks(<span id="task_counter"></span>)</h3>
+              <ul id="tasks_group">
+                  <!-- inserting collection of task -->
+              </ul>
             </div>
         </div>
     </div>

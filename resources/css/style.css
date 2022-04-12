@@ -5,8 +5,13 @@
 }
 
 body{
-    background-color: #021f54;
+    background-color: #232323;
     color: #ffffff;
+}
+
+:root{
+    --orange-color: #ff8500;
+    --main-grey: #44444441;
 }
 
 input::placeholder{
@@ -76,7 +81,11 @@ input::placeholder{
 
 
 /* DatePicker calendar style */
+#datepicker{
+}
+
 .ui-widget.ui-widget-content{
+    border:none !important;
     padding: 1rem;
     width: fit-content;
     margin: 0 auto;
@@ -84,14 +93,8 @@ input::placeholder{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: #021f543d;
-    box-shadow: 0 8px 32px 0 #28282857;
-    backdrop-filter: blur( 15px );
-    -webkit-backdrop-filter: blur( 9px ) ;
+    background: var(--main-grey);
     border-radius: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.622);
-    border-left: 1px solid rgba(255, 255, 255, 0.844);
-    outline: 1px solid rgba( 255, 255, 255, 0.18 );
     color: #fff;
 }
 
@@ -219,6 +222,11 @@ input::placeholder{
 }
 
 /* Form Styling */
+#form_section{
+    position: relative;
+    
+}
+
 .form-label{
     color: #91e4fb;
 }
@@ -227,15 +235,26 @@ input::placeholder{
     color: red;
 }
 
+
 .form-control{
-    background-color: #154a83;
+    background-color: var(--main-grey);
     border:none;
     color:#fff !important;
 }
 
-.form-control:focus{
-    background-color: #2262a7;
+.form-control:focus, .form-control::selection{
+    background-color: var(--main-grey);
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 35px rgb(90, 90, 90) inset !important;
+    -webkit-text-fill-color:white
+}
+
+
 
 form p{
     text-align: left;
@@ -305,6 +324,8 @@ label > input[type="radio"]:checked + *::before {
 label > input[type="radio"]:checked + * {
     color: teal !important;
 }
+
+
 
 /* Button */
 .btn_group{
@@ -465,6 +486,26 @@ label > input[type="radio"]:checked + * {
     font-weight: bold;
 }
 
+/* notification */
+.notification{
+    width:100vw;
+    height:100vh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+.checked_circle{
+    text-shadow: 3px 3px 5px #000;
+    
+}
+
+.hide{
+    display: none;
+    transition: display .4s ease-in-out;
+}
+
 /* media query */
 @media screen and (min-width: 768px){
     .card_date{
@@ -480,6 +521,10 @@ label > input[type="radio"]:checked + * {
         left: 0;
         font-weight: lighter;
     }
+    
+}
+
+@media screen and (min-width:) {
     
 }
 
