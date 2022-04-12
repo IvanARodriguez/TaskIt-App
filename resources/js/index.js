@@ -20,29 +20,25 @@ const selectedStatus = () =>{
 }
 
 const newTaskManager = new TaskManager();
+
 newTaskManager.addTask(
   "Take dog out", 
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
-  "Ivan R.",
-  "developer",
-  "",
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo,");
-newTaskManager.addTask(
-  "feed the fish", 
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
-  "Juan",
-  "engineer",
-  "",
-  "dont over feed"
-  );
-newTaskManager.addTask(
-  "Clean the bed and go to the doctor", 
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequuntur ducimus explicabo, minima rerum nam eius inventore recusandae aliquam odit quae deserunt perferendis? Id quibusdam quod, praesentium natus pariatur a.",
-  "Pedro",
-  "chef",
-  "");
-//tasks template
+  "If you can go to the market and buy some chicken for dinner 🥘",
+  "Jonathan",
+  "Husband",
+  new Date().toDateString(),
+  "remember the chicken can not be over burned");
 
+newTaskManager.addTask(
+  "Feed the fish", 
+  "The fish tank doesn't have more filter, if you have a chance go to the pet store 🐠",
+  "Juan",
+  "Son",
+  new Date().toDateString(),
+  "The filter size is Medium"
+  );
+
+//tasks template
 const ul = document.getElementById("tasks_group");
 const taskCounter = document.getElementById("task_counter");
 
@@ -50,11 +46,12 @@ const taskCounter = document.getElementById("task_counter");
 const createTaskTemplate = (task) => {
   const htmlLi = `
     <li id="${task.id}"class="row border-bottom pb-2 border-secondary mb-3 align-items-center close" >
-      <span class="col-2 d-block">${(task.id < 10) ? "0" + task.id : task.id}</span> <h4 class="col-8 fw-lighter">${task.name}</h4><a type="button" class="text-white col-2 details_viewer" ><i class="bi bi-eye-fill"></i></a>
-      <div class="bg-dark p-3 rounded mb-4 details">
+      <span class="col-2 d-block pb-3">${(task.id < 10) ? "0" + task.id : task.id}</span> <h4 class="col-8 fw-lighter">${task.name}</h4><a type="button" class="text-white col-2 details_viewer" ><i class="bi bi-eye-fill"></i></a>
+      <div class="bg-dark p-3 rounded mb-4 details border-left-orange">
+      <span class="fw-lighter text-end d-block">${task.dueDate}</span>
         <h6 class="fw-light"> For:<span class=" fw-bolder "> ${task.assignedTo} </span> | <span class="text-secondary fw-light"> ${task.taskRole} </span></h6>
-        <p>${task.description}</p>
-        <p>Notes: ${task.notes === undefined ? "" : task.notes}</p>
+        <p class="fw-lighter">${task.description}</p>
+        <p>Notes: <span class="fw-lighter">${task.notes === undefined ? "" : task.notes}</span></p>
       </div>
     </li> 
     `;
@@ -67,8 +64,6 @@ newTaskManager.tasks.forEach(task => {
 } );
 
 //Hide or show tasks details
-let detailViewerBtn = document.querySelectorAll(".details_viewer");
-
 function toggleDetails(){
   let itemClass = this.parentNode.className;
   if(itemClass === "row border-bottom pb-2 border-secondary mb-3 align-items-center close"){
@@ -77,6 +72,10 @@ function toggleDetails(){
     this.parentNode.className = "row border-bottom pb-2 border-secondary mb-3 align-items-center close"
   }
 };
+let detailViewerBtn = document.querySelectorAll(".details_viewer");
+for (let i = 0; i < detailViewerBtn.length; i++) {
+  detailViewerBtn[i].addEventListener("click", toggleDetails);
+}
 
 //getting the form inputs
 const addNewTask=(event)=>{

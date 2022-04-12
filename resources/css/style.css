@@ -393,7 +393,9 @@ label > input[type="radio"]:checked + * {
     transition: height .3s ease-in-out;
     transition: transform 1s ease-in-out, display  3s ease-out 1s;
 }
-
+.border-left-orange{
+    border-left: 3px solid var(--orange-color);
+}
 /* notification */
 .notification{
     width:100vw;
