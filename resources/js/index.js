@@ -18,6 +18,7 @@ const selectedStatus = () =>{
     
   }
 }
+
 const newTaskManager = new TaskManager();
 newTaskManager.addTask("feed the fish", "feed fish at 3pm","me","");
 newTaskManager.addTask("feed the fish", "feed fish at 3pm","me","");
@@ -36,7 +37,8 @@ const createTaskTemplate = (task) => {
   const htmlLi = `
   <li class="row border-bottom pb-2 border-secondary mb-3" >
   <span class="col-2">${task.id}</span> <span class="col-8">${task.name}</span><i class="bi bi-eye-fill col-2"></i>
-  </li>  `;
+  </li>
+ `;
   ul.insertAdjacentHTML("beforeend", htmlLi);
   
   taskCounter.innerHTML = newTaskManager.tasks.length;
@@ -68,4 +70,3 @@ const addNewTask=(event)=>{
   }
 }
 form.onsubmit = addNewTask;
-
