@@ -2,6 +2,8 @@ import { TaskManager } from "./taskManager.js";
 //form elements
 const form = document.getElementById("form_section")
 const dueDate = document.getElementById("cal_datepicker");
+dueDate.value = new Date().toDateString();
+console.log(dueDate.value);
 const assignTo = document.getElementById("AssignTo");
 const taskRole = document.getElementById("TaskRole");
 const taskName = document.getElementById("TaskName");
@@ -45,13 +47,19 @@ const taskCounter = document.getElementById("task_counter");
 //create HTML task template
 const createTaskTemplate = (task) => {
   const htmlLi = `
-    <li id="${task.id}"class="row border-bottom pb-2 border-secondary mb-3 align-items-center close" >
+    <li data-task-id="${task.id}"class="row border-bottom pb-2 border-secondary mb-3 align-items-center close" >
       <span class="col-2 d-block pb-3">${(task.id < 10) ? "0" + task.id : task.id}</span> <h4 class="col-8 fw-lighter">${task.name}</h4><a type="button" class="text-white col-2 details_viewer" ><i class="bi bi-eye-fill"></i></a>
       <div class="bg-dark p-3 rounded mb-4 details border-left-orange">
-      <span class="fw-lighter text-end d-block">${task.dueDate}</span>
+        <div class="d-flex justify-content-between mb-3">
+           <span class="fw-lighter text-end d-block">${task.taskStatus}</span>
+           <span class="fw-lighter text-end d-block">${task.dueDate}</span>
+        </div>
         <h6 class="fw-light"> For:<span class=" fw-bolder "> ${task.assignedTo} </span> | <span class="text-secondary fw-light"> ${task.taskRole} </span></h6>
         <p class="fw-lighter">${task.description}</p>
         <p>Notes: <span class="fw-lighter">${task.notes === undefined ? "" : task.notes}</span></p>
+
+        <a class="text-primary done_btn" type="button">Mark as Done</a>
+
       </div>
     </li> 
     `;
@@ -62,6 +70,15 @@ const createTaskTemplate = (task) => {
 newTaskManager.tasks.forEach(task => {
   createTaskTemplate(task);
 } );
+
+const markAsDoneBtn = document.querySelectorAll("done_btn");
+markAsDoneBtn.forEach(btn => {
+  if(btn.classList.contains("done-button")){
+    const parentTask = btn.parentNode.parentNode;
+    const taskId = Number(parentTask.dataset.id);
+  }
+})
+    
 
 //Hide or show tasks details
 function toggleDetails(){
@@ -76,6 +93,7 @@ let detailViewerBtn = document.querySelectorAll(".details_viewer");
 for (let i = 0; i < detailViewerBtn.length; i++) {
   detailViewerBtn[i].addEventListener("click", toggleDetails);
 }
+
 
 //getting the form inputs
 const addNewTask=(event)=>{
@@ -95,7 +113,8 @@ const addNewTask=(event)=>{
     } else if(!form.checkValidity()) {
       event.stopPropagation()
       form.classList.add('was-validated')
-  }
+    }
+    console.table(newTaskManager.tasks);
 
   //Add an event listener to all task viewer links
   detailViewerBtn = document.querySelectorAll(".details_viewer")

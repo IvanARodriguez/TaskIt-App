@@ -129,7 +129,7 @@
       </div>
 
       <div class="task_box">
-        <ul id="tasks_group">
+        <ul>
           <!-- inserting collection of task -->
         </ul>
       </div>
@@ -143,9 +143,13 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
     <script>
       // DATE TIME PICKER Jquery configuration
-      $(function() {    
+      $(function() { 
+          $('#datepicker').datepicker({
+              dateFormat:"yy-mm-dd"
+          })   
         $('#datepicker').change(function () {
             $('#cal_datepicker').val($('#datepicker').datepicker().val());
+
         });
       });
     </script>

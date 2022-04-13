@@ -5,9 +5,11 @@
         this.tasks = tasks;
         this.currentId = currentId;
     }
+  
+  
 
 
-    addTask(taskName, description, assignedTo, taskRole, dueDate, notes, taskStatus="Todo"){
+    addTask(taskName, description, assignedTo, taskRole, dueDate, notes, taskStatus="TO-DO"){
         this.currentId++;
          
         const newTask = {
