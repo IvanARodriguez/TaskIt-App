@@ -45,7 +45,13 @@
                 <div class="col-md-6 col-xl-4 w-auto">
                     <div class="mb-3 w-100">
                       <input type="date" hidden class="form-control" id="cal_datepicker" required format="mm-dd-yy">
-                      <div id="datepicker" role="" class="w-100"></div>                        
+                      <div id="datepicker" role="" class="w-100" required></div>  
+                      <div class="valid-feedback">
+                        Ok!
+                      </div>
+                      <div class="invalid-feedback">
+                        Select a due date!
+                      </div>                     
                     </div>
                     <div class="mb-3">
                      <label for="AssignTo" class="form-label text-orange">Assign To <span class="required_signed">*</span></label>
@@ -70,8 +76,8 @@
                    <span class="d-block mb-3 display-4 fw-bolder opacity-25">STATUS</span>
                    <div class="row pb-3">
                            <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="ToDo" value="To do" checked="checked">
-                             <label class="form-check-label" for="ToDo" >To Do</label>
+                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="Todo" value="TODO" checked="checked">
+                             <label class="form-check-label" for="Todo" >To Do</label>
                            </div>
                            <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
                              <input class="form-check-input input_urgent" type="radio" name="inlineRadioOptions" id="Urgent" value="To do">
@@ -129,7 +135,7 @@
       </div>
 
       <div class="task_box">
-        <ul id="tasks_group">
+        <ul>
           <!-- inserting collection of task -->
         </ul>
       </div>
@@ -143,12 +149,13 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
     <script>
       // DATE TIME PICKER Jquery configuration
-      $(function() {
-        $("#datepicker").datepicker({
-          dateFormat: "yy-mm-dd"
-        })
+      $(function() { 
+          $('#datepicker').datepicker({
+              dateFormat:"yy-mm-dd"
+          })
         $('#datepicker').change(function () {
             $('#cal_datepicker').val($('#datepicker').datepicker().val());
+
         });
       });
     </script>
