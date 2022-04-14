@@ -2,6 +2,8 @@ import { TaskManager } from "./taskManager.js";
 
 const newTaskManager = new TaskManager();
 
+
+
 const form = document.getElementById("form_section")
 
 //TEMPLATES
@@ -12,17 +14,19 @@ newTaskManager.addTask(
   "Husband",
   new Date().toDateString(),
   "remember the chicken can not be over burned"
-);
-
-newTaskManager.addTask(
-  "Feed the fish", 
-  "The fish tank doesn't have more filter, if you have a chance go to the pet store 🐠",
-  "Juan",
-  "Son",
-  new Date().toDateString(),
-  "The filter size is Medium"
-);
-
+  );
+  
+  newTaskManager.addTask(
+    "Feed the fish", 
+    "The fish tank doesn't have more filter, if you have a chance go to the pet store 🐠",
+    "Juan",
+    "Son",
+    new Date().toDateString(),
+    "The filter size is Medium"
+    );
+    
+//load the task from local storage
+newTaskManager.load();
 newTaskManager.render();
 
 //getting the form inputs
@@ -70,6 +74,8 @@ form.addEventListener("submit", (event)=>{
       form.classList.add('was-validated')
     }
 
+  newTaskManager.save();
+
   newTaskManager.render();
 }) 
 
@@ -86,6 +92,9 @@ listTask.addEventListener("click",(event)=>{
     const task = newTaskManager.getTaskById(taskId);
     
     task.taskStatus = "DONE";
+
+    //save the tasks to localStorage
+    newTaskManager.save();
 
     newTaskManager.render();
   }

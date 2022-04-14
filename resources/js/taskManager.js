@@ -113,5 +113,40 @@ const showDetails = ()=>{
         taskCounter.innerHTML = this.tasks.length;
         
     }
+    save(){
+        //create a json string of the tasks collections
+        const tasksJson = JSON.stringify(this.tasks);
+
+        //store the json string in local storage 
+        localStorage.setItem("tasks", tasksJson);
+
+        //convert currentId to string
+        const currentId = String(this.currentId);
+
+        //store the currentId in local storage
+        localStorage.setItem("currentId", currentId);
+    }
+    load(){
+        //check if any tasks are saved in local storage
+        if(localStorage.getItem("tasks")){
+
+            //GET THE JSON string task from local storage 
+            const tasksJson = localStorage.getItem("tasks");
+
+            //converting to an array & store in taskManager 
+            this.tasks = JSON.parse(this.tasksJson);
+
+        }
+        //check if the currentId is saved to the local storage 
+        if(localStorage.getItem("currentId")){
+
+            //get the currentId string from local storage 
+            const currentId = localStorage.getItem("currentId");
+
+            //convert the currentId to a number store it in the taskManager 
+            this.currentId = Number(currentId);
+        }
+
+    }
 }
 
