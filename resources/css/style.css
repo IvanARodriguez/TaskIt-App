@@ -268,7 +268,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 35px rgb(90, 90, 90) inset !important;
-    -webkit-text-fill-color:white
+    -webkit-text-fill-color:white;
 }
 
 
@@ -461,6 +461,64 @@ label > input[type="radio"]:checked + * {
 .hide{
     display: none;
     transition: display .4s ease-in-out;
+}
+/* About Developers  */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #1c1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+    flex-flow: column;
+    padding: 8rem 2rem;
+    width: 15rem;
+    text-align: center;
+}
+
+header li .nav-item a{
+    text-decoration: none;
+}
+
+header .navbar a {
+    display: block;
+    font-size: 1rem;
+    color: white;
+    margin: 5rem 0;
+ 
+}
+
+section{
+    margin: 0 20rem;;
+    padding-top: 4rem;
+}
+
+.meet_dev{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.h1_meet,.meet{
+    font-size: 4rem;
+    
+}
+.meet{
+    color: var(--orange-color);
+}
+
+.meet_content h2{
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+.meet_dev .meet_content h2 span{
+    color:#616060;
 }
 
 /* media query */
