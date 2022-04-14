@@ -1,18 +1,18 @@
  //create HTML task template
 const createTaskHtml = (id, name, assignedTo, role, description, notes, dueDate, status) => `
       <li data-task-id="${id}"class="row border-bottom pb-2 border-secondary mb-3 align-items-center close" >
-        <span class="col-2 d-block pb-3">${(id < 10) ? "0" + id  : id}</span> 
-        <h4 class="col-8 fw-lighter">${name}</h4>
+        <span class="col-2 d-block pb-3"><span class="me-3 ${(status === "DONE") ? "done_indicator": "todo_indicator" }"><i class="bi bi-circle-fill"></i></span>${(id < 10) ? "0" + id  : id}</span> 
+        <h4 class="col-8 fw-lighter ${(status === "DONE") ? "done": "todo" }" id="Task-${id}">${name}</h4>
         <a type="button" class="text-white col-2 details_viewer" ><i class="bi bi-eye-fill"></i></a>
         <div class="bg-dark p-3 rounded mb-4 details border-left-orange">
           <div class="d-flex justify-content-between mb-3">
-             <span class="fw-lighter text-end d-block">${status}</span>
+             <span class="fw-bolder text-end d-block ${(status === "DONE") ? "done_status border-success": "todo_status border-danger" }">${status}</span>
              <span class="fw-lighter text-end d-block">${dueDate}</span>
           </div>
           <h6 class="fw-light"> For:<span class=" fw-bolder "> ${assignedTo} </span> | <span class="text-secondary fw-light"> ${role} </span></h6>
           <p class="fw-lighter">${description}</p>
           <p>Notes: <span class="fw-lighter">${notes === undefined ? "" : notes}</span></p>
-          <a class="text-primary done_btn" type="button">Mark as Done</a>
+          <a class=" done_btn ${(status === 'TODO') ? "open visible": "close invisible"}" type="button">Done?</a>
         </div>
       </li> 
 `;
@@ -44,6 +44,7 @@ const showDetails = ()=>{
     })
 }
 
+// TaskManager class
  export class TaskManager {
     constructor(tasks = [], currentId = 0){
         this.tasks = tasks;
@@ -102,7 +103,7 @@ const showDetails = ()=>{
         const tasksHtml = tasksHtmlList.join('\n');
 
         const tasksList = document.querySelector('#tasks_group');
-
+        
         tasksList.innerHTML = tasksHtml;
 
         showDetails();
@@ -113,3 +114,4 @@ const showDetails = ()=>{
         
     }
 }
+

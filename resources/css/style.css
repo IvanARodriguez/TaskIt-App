@@ -14,6 +14,11 @@ body{
     --main-grey: #4444446d;
 }
 
+a{
+    text-decoration: none;
+    color:#5ac4f5;
+}
+
 input::placeholder{
     color: rgb(193, 193, 193) !important;
 }
@@ -383,19 +388,58 @@ label > input[type="radio"]:checked + * {
 }
 
 .close .details{
-    transform: translateY(-100%);
     display: none;
+    transform: translateY(70%);
+    height: 0;
+    visibility: hidden;
 }
 
+.details{
+    transition: transform .3s ease-in-out, visibility 0.3s linear;
+    
+}
+
+.details_viewer i{
+    transition: color .2s ease-in-out;
+}
+
+.details_viewer i:hover{
+    color: var(--orange-color);
+    
+}
 .open .details{
+    display: block;
     transform: translateY(0);
+    height: fit-content;
     visibility: visible;
-    transition: height .3s ease-in-out;
-    transition: transform 1s ease-in-out, display  3s ease-out 1s;
+   
 }
 .border-left-orange{
     border-left: 3px solid var(--orange-color);
 }
+.done{
+    text-decoration: line-through;
+}
+
+.todo{
+    text-decoration: none;
+}
+
+.done_status{
+    color: rgb(4, 167, 4);
+}
+
+.done_indicator{
+    font-size: 10px;
+    color:  rgb(4, 167, 4);
+}
+
+.todo_indicator i{
+    font-size: 10px;
+   color: rgb(205, 57, 3);
+}
+
+
 /* notification */
 .notification{
     width:100vw;

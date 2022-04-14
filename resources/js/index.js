@@ -72,3 +72,21 @@ form.addEventListener("submit", (event)=>{
 
   newTaskManager.render();
 }) 
+
+//Task 7 
+const listTask = document.querySelector("#tasks_group");
+
+listTask.addEventListener("click",(event)=>{
+  if(event.target.classList.contains("done_btn")){
+    
+    const parentTask = event.target.parentElement.parentElement;
+
+    const taskId = Number(parentTask.getAttribute("data-task-id"));
+
+    const task = newTaskManager.getTaskById(taskId);
+    
+    task.taskStatus = "DONE";
+
+    newTaskManager.render();
+  }
+})
