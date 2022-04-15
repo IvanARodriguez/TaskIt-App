@@ -349,6 +349,15 @@ label > input[type="radio"]:checked + * {
     visibility: hidden;
 }
 
+/* developers */
+.meet{
+    color: var(--orange-color);
+}
+
+.developer{
+    height: fit-content;
+}
+
 /* media query */
 @media screen and (max-width: 440px) {
     .intro_screen{
