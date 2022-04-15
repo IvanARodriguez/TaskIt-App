@@ -134,7 +134,7 @@ const showDetails = ()=>{
             const tasksJson = localStorage.getItem("tasks");
 
             //converting to an array & store in taskManager 
-            this.tasks = JSON.parse(this.tasksJson);
+            this.tasks = JSON.parse(tasksJson);
 
         }
         //check if the currentId is saved to the local storage 
