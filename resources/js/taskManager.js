@@ -50,7 +50,7 @@ const showDetails = ()=>{
         this.tasks = tasks;
         this.currentId = currentId;
     }
-    addTask(taskName, description, assignedTo, taskRole, dueDate, notes, taskStatus="TODO"){
+    addTask(taskName, description, assignedTo, taskRole, dueDate, notes, priority = "Regular", taskStatus="TODO"){
         this.currentId++;
         //Create a new object and push it to the tasks array
         const newTask = {
@@ -61,6 +61,7 @@ const showDetails = ()=>{
             description: description,
             dueDate: dueDate,
             notes: notes,
+            priority: priority,
             taskStatus: taskStatus 
 
         };
@@ -89,6 +90,8 @@ const showDetails = ()=>{
     render() {
         const tasksHtmlList = [];
 
+        const priorityTasks = [];
+
         for (let i = 0; i < this.tasks.length; i++) {
             const task = this.tasks[i];
             const date = new Date(task.dueDate);
@@ -96,15 +99,22 @@ const showDetails = ()=>{
 
             // Pass the task id as a parameter
             const taskHtml = createTaskHtml(task.id, task.name, task.assignedTo, task.taskRole, task.description, task.notes, formattedDate, task.taskStatus);
-
-            tasksHtmlList.push(taskHtml);
+            
+            (task.priority === "Regular") ? tasksHtmlList.push(taskHtml) : priorityTasks.push(taskHtml);
+            
         }
 
         const tasksHtml = tasksHtmlList.join('\n');
 
+        const priorityHtml = priorityTasks.join('\n');
+
         const tasksList = document.querySelector('#tasks_group');
-        
+
         tasksList.innerHTML = tasksHtml;
+
+        const priorityList = document.querySelector('#priority_group');
+
+        priorityList.innerHTML = priorityHtml;
 
         showDetails();
 
