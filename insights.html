@@ -23,16 +23,57 @@
         
                 <nav class="navbar navbar-dark p-0">
                     <ul class="navbar-nav d-flex w-100 gap-4">
-                      <li class="nav-item "><a href="#" class="nav-link current ps-5 py-lg-3 w-100 border-end border-5"><i class="bi bi-grid-1x2-fill me-3"></i> DASHBOARD</a></li>
+                      <li class="nav-item "><a href="/" class="nav-link  ps-5 py-lg-3"><i class="bi bi-grid-1x2-fill me-3"></i> DASHBOARD</a></li>
                       <li class="nav-item "><a href="developers.html" class="nav-link ps-5 py-lg-3"><i class="bi bi-pc-display me-3"></i> DEVELOPERS</a></li>
-                      <li class="nav-item "><a href="#" class="nav-link ps-5 py-lg-3"><i class="bi bi-easel2-fill me-3"></i> INSIGHTS</a></li>
+                      <li class="nav-item "><a href="insights.html" class="nav-link ps-5 py-lg-3 current  border-end border-5"><i class="bi bi-easel2-fill me-3"></i> INSIGHTS</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
+        <main class="text-light col-md-8">
+            <div class="container pt-5 mt-3 ">
+                <div class="row">
+                    <div class="px-md-2">
+                        <h1 class="display-2">Insights</h1>
+                        <h2 class="fw-light text-orange">The task management plan</h2>
+                    <hr>
+                        <p class="">TASKIT is a web application that allows the user to create, manage and delete tasks, the appplication accepts several data entries such as assigned to, roles, due date and more, this application was designed to have a desktop application feel, however the developers desired to implement mobile first developments approaches, this way the web application work effectively on any device screen size.</p>
 
-        <main class="bg-dark text-dark col-md-9">
+                        <h3 class="fw-light">The Design</h3>
 
+                        <p>In the beginning, the application had an ocean blue and orange color pallete design, but the designed looked outdated and wasn't using the best design practices, therefore the developers desired to implement a <i>minimalist and modern</i> design with a dark theme look where dark grey and orange are the main colors.</p>
+                        
+                        <div class="row mt-3">
+
+                            <div class="col-md-6">
+                                <h4 class="bg-orange text-dark ps-3 py-2 mt-3">The form</h4>
+        
+                                <p>One of the core features of this web app is the form, the entries allows the user to provide the details needed for a single task, this simple but effective form has an unusual datepicker which stands out, due of the uncommon appearance. the date picker looks more like a gadget than a form input. Also, the required fields have a red asterisk which indicates that the fields is required for a better user experience.</p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h4 class="bg-orange text-dark ps-3 py-2 mt-3">The Tasks</h4>
+    
+                                <p>The task section dynamically render all tasks, the design is minimalist, with just the task status indicator, task number, and task name the user has more clearance and is able to focus on what matters most, what needs to be done?, but, the handle of each task is also important, that is why there is a call to action button to show more details and actions to be taken such as mark as done and delete.</p>
+                            </div>
+
+                        </div>
+
+                        <h2 class="display-4">Features</h2>
+
+                        <p>There are some features that provide a rich user interaction, one of the is the implementation of a splash screen for mobile screen sizes, TaskIT also includes:</p>
+
+                        <ol>
+                            <li>Two-way validation through bootstrap and javascript</li>
+                            <li>Push notifications to informa submition state</li>
+                            <li>Dynamic rendering</li>
+                            <li>Local Storage</li>
+                            <li>Progressive Web Application</li>
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
