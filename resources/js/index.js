@@ -2,32 +2,45 @@ import { TaskManager } from "./taskManager.js";
 
 const newTaskManager = new TaskManager();
 
-
-
 const form = document.getElementById("form_section")
 
 //TEMPLATES
-newTaskManager.addTask(
-  "Take dog out", 
-  "If you can go to the market and buy some chicken for dinner 🥘",
-  "Jonathan",
-  "Husband",
-  new Date().toDateString(),
-  "remember the chicken can not be over burned"
-  );
+// newTaskManager.addTask(
+//   "Take dog out", 
+//   "If you can go to the market and buy some chicken for dinner 🥘",
+//   "Jonathan",
+//   "Husband",
+//   new Date().toDateString(),
+//   "remember the chicken can not be over burned"
+//   );
   
-  newTaskManager.addTask(
-    "Feed the fish", 
-    "The fish tank doesn't have more filter, if you have a chance go to the pet store 🐠",
-    "Juan",
-    "Son",
-    new Date().toDateString(),
-    "The filter size is Medium"
-    );
+//   newTaskManager.addTask(
+//     "Feed the fish", 
+//     "The fish tank doesn't have more filter, if you have a chance go to the pet store 🐠",
+//     "Juan",
+//     "Son",
+//     new Date().toDateString(),
+//     "The filter size is Medium"
+//     );
     
 //load the task from local storage
 newTaskManager.load();
+
 newTaskManager.render();
+
+//show notification
+
+const showNotification = ()=>{
+  const notificationBanner = document.getElementById("notification_banner");
+
+  notificationBanner.classList.remove("hide");
+  notificationBanner.classList.add("show");
+  
+  setTimeout(()=>{
+    notificationBanner.classList.add("hide");
+    notificationBanner.classList.remove("show");},
+    1600);
+}
 
 //getting the form inputs
 form.addEventListener("submit", (event)=>{
@@ -60,6 +73,7 @@ form.addEventListener("submit", (event)=>{
       dueDate.value, 
       notes.value,
     selectedStatus())
+    showNotification();
 
     //clear the input fields
      taskName.value = "";
@@ -73,11 +87,12 @@ form.addEventListener("submit", (event)=>{
       event.stopPropagation()
       form.classList.add('was-validated')
     }
+  
 
   newTaskManager.save();
 
   newTaskManager.render();
-}) 
+}); 
 
 //Task 7 
 const listTask = document.querySelector("#tasks_group");

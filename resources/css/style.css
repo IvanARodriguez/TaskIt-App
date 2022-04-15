@@ -4,6 +4,10 @@
     box-sizing: border-box !important;
 }
 
+:root{
+    --bs-primary: #f48600;
+}
+
 body{
     background-color: #232323;
     color: #ffffff;
@@ -58,17 +62,18 @@ input::placeholder{
 }
 
 .logo {
+    font-size: 2rem;
     row-gap: 1rem;
     margin-bottom: 5rem;
 }
 
-.logo h2{
+.logo p{
     color:#b8b8b8;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.logo h2 span{
+.logo p span{
     color: var(--orange-color);
 }
 
@@ -99,137 +104,7 @@ input::placeholder{
 }
 .navigation{
     background-color: #1c1c1c;
-}
-
-/* DatePicker calendar style */
-
-.ui-widget.ui-widget-content{
-    border:none !important;
-    padding: 1rem;
-    min-width: fit-content;
-    width: 100%;
-    row-gap: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: var(--main-grey);
-    border-radius: 10px;
-    color: #fff;
-}
-
-#ui-datepicker-div { 
-    display: none; 
-}
-
-.ui-datepicker .ui-datepicker-header {
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    font-weight: normal;
-    text-transform: uppercase;
-}
-
-.ui-datepicker-calendar{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.ui-datepicker-calendar tbody, 
-.ui-datepicker-calendar thead{
-    text-align: center;
-    width: 100%;
-
-}
-
-.ui-datepicker-calendar thead{
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.ui-datepicker-calendar tbody tr, 
-.ui-datepicker-calendar thead tr{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    align-items: center;
-    justify-content: space-around;
-    gap: .6rem;
-    padding-bottom: 1rem;
-}
-
-.ui-datepicker-next,
-.ui-datepicker-prev{
-    background-color: #ff8500 !important;
-    top: 0 !important;
-    border-radius: 3rem;
-    transition: background-color .5s ease-in-out;
-    cursor: pointer;
-    border: none;
-    max-height: 40px;
-    max-width: 40px;
-    transition: left 130ms ease-in-out;
-}
-
-.ui-datepicker-next:hover,
-.ui-datepicker-prev:hover{
-    border: none;
-}
-
-.ui-datepicker-next span {
-    background-image: url("../../resources/images/chevron_right_white_24dp.svg") !important;
-    background-position: center !important;
-}
-
-.ui-datepicker-prev span {
-    background-image: url("../../resources/images/chevron_left_black_24dp.svg") !important;
-    background-position:center!important;
-}
-
-.ui-datepicker-calendar thead tr th{
-    font-weight: normal;
-}
-
-.ui-datepicker-calendar tbody tr td{
-    font-weight: normal;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 2rem;
-    max-width: 2rem;
-    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.5);
-    transition: background-color .4s;
-}
-
-.ui-datepicker-calendar tbody tr td:hover{
-    background-color: #484848b8;
-    outline: 1px solid #777;
-    cursor: pointer;
-    border-radius: .3rem;
-}
-
-.ui-widget-content .ui-state-default{
-    padding: 1;
-    text-align: center;
-    background-color: transparent;
-    border: none;
-    color: white;
-}
-
-.ui-datepicker-current-day {
-    background-color: #ff8500 !important;
-    border-radius: .3rem;
-}
-
-.ui-state-highlight{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: 1px solid #ff8500 !important;
+    z-index: 100;
 }
 
 /* Main Styling */
@@ -378,10 +253,15 @@ label > input[type="radio"]:checked + * {
 .task_box{
     background-color: var(--main-grey);
     overflow-y: scroll;
+    overflow-x: scroll;
     border-radius: 2rem;
     padding: 2rem;
     height: 40%;
 }
+
+.task_box::-webkit-scrollbar {
+    width: 0px;
+  }
 
 .priority_header{
     height: fit-content;
@@ -439,86 +319,34 @@ label > input[type="radio"]:checked + * {
    color: rgb(205, 57, 3);
 }
 
-
 /* notification */
 .notification{
-    width:100vw;
-    height:100vh;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    bottom: 0;
+    width: fit-content;
+    right: 0;
+    background-color: #1aa518b2;
+    border-radius: 1.8rem;
     display: flex;
-    place-content: center;
+    margin: 2rem;
+    padding: 1rem;
     place-items: center;
+    transition: transform .5s ease-in-out;
 }
-.checked_circle{
-    text-shadow: 3px 3px 5px #000;
-    
+
+.notification p{
+    font-size: 20px;
+    margin-left: 1rem;
 }
+
 .show{
-    display: block;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .hide{
-    display: none;
-    transition: display .4s ease-in-out;
-}
-/* About Developers  */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #1c1c1c;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 10000;
-    flex-flow: column;
-    padding: 8rem 2rem;
-    width: 15rem;
-    text-align: center;
-}
-
-header li .nav-item a{
-    text-decoration: none;
-}
-
-header .navbar a {
-    display: block;
-    font-size: 1rem;
-    color: white;
-    margin: 5rem 0;
- 
-}
-
-section{
-    margin: 0 20rem;;
-    padding-top: 4rem;
-}
-
-.meet_dev{
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap;
-}
-
-.h1_meet,.meet{
-    font-size: 4rem;
-    
-}
-.meet{
-    color: var(--orange-color);
-}
-
-.meet_content h2{
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-}
-
-.meet_dev .meet_content h2 span{
-    color:#616060;
+    transform: translateY(110%);
+    visibility: hidden;
 }
 
 /* media query */
@@ -529,11 +357,6 @@ section{
 }
 
 @media screen and (min-width: 1200px){
-    .big_screens{
-        overflow: scroll;
-        scrollbar-width: 0;
-        scrollbar-base-color: transparent;
-    }
     .logo img{
         max-width: 250px;
     }
