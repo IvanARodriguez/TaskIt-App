@@ -18,6 +18,8 @@ body{
     --main-grey: #4444446d;
 }
 
+
+
 a{
     text-decoration: none;
     color:#5ac4f5;
@@ -27,12 +29,18 @@ input::placeholder{
     color: rgb(193, 193, 193) !important;
 }
 
+
+
 .intro_screen{
     display: none;
 }
 
 .text-orange{
     color: var(--orange-color);
+}
+
+.bg-orange{
+    background-color: var(--orange-color);
 }
 
 /* Home Section styling */
