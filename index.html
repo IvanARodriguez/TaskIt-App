@@ -29,14 +29,14 @@
             </div>
         </div>
     </main>
-    <header class="col-xl-2 pt-5 navigation ps-3">
+    <header class="col-xl-2 pt-5 navigation">
       <div class="logo flex_col d-flex justify-content-center align-items-center">
         <img src="resources/images/TaskItLogo.svg" alt="TaskIT logo" width="80px">
-        <h2>TASK<span>IT</span></h2>
+        <p>TASK<span>IT</span></p>
     </div>
       <nav class="navbar navbar-dark">
           <ul class="navbar-nav d-flex w-100 gap-4">
-            <li class="nav-item "><a href="/" class="nav-link  ps-5 py-lg-3 current  border-end border-5"><i class="bi bi-grid-1x2-fill me-3"></i> DASHBOARD</a></li>
+            <li class="nav-item "><a href="/" class="nav-link ps-5 py-lg-3 current  border-end border-5"><i class="bi bi-grid-1x2-fill me-3"></i> DASHBOARD</a></li>
             <li class="nav-item "><a href="developers.html" class="nav-link ps-5 py-lg-3"><i class="bi bi-pc-display me-3"></i> DEVELOPERS</a></li>
             <li class="nav-item "><a href="insights.html" class="nav-link ps-5 py-lg-3"><i class="bi bi-easel2-fill me-3"></i> INSIGHTS</a></li>
           </ul>
@@ -80,11 +80,11 @@
                    <span class="d-block mb-3 display-4 fw-bolder opacity-25">STATUS</span>
                    <div class="row pb-3">
                            <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="Todo" value="TODO" checked="checked">
-                             <label class="form-check-label" for="Todo" >To Do</label>
+                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="regular" value="Regular" checked="checked">
+                             <label class="form-check-label" for="regular" >Regular</label>
                            </div>
                            <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input input_urgent" type="radio" name="inlineRadioOptions" id="Urgent" value="To do">
+                             <input class="form-check-input input_urgent" type="radio" name="inlineRadioOptions" id="Urgent" value="Urgent">
                              <label class="form-check-label" for="Urgent" >Urgent</label>
                            </div>
                    </div>
@@ -130,18 +130,18 @@
     
     <!-- Task layouts -->
     <div id="view_section"class="row p-2 col-xl-4 task_wrapper big_screens d-flex justify-content-center">
-      <div class="task_box my-5 h-50" >
-        <h3 class="mb-5">My Tasks (<span id="task_counter"></span>)</h3>
-        <ul id="tasks_group">
-          <!-- inserting collection of task -->
-        </ul>
-      </div>
       <div class="priority_header">
         <h2 class="fw-bolder opacity-25 display-5 ">PRIORITY</h2>
       </div>
 
-      <div class="task_box h-25">
+      <div class="task_box h-25" id="priority_group">
         <ul>
+          <!-- inserting collection of task -->
+        </ul>
+      </div>
+      <div class="task_box my-5 h-50" >
+        <h3 class="mb-5">My Tasks (<span id="task_counter"></span>)</h3>
+        <ul id="tasks_group">
           <!-- inserting collection of task -->
         </ul>
       </div>

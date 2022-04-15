@@ -165,56 +165,11 @@ form p{
 
 /* Radio */
 .input_todo[type="radio"]{
-    background-color: #3d8af7;
+    background-color: var(--orange-color);
 }
 
-.input_review[type="radio"]{
-    background-color: #fefb64;
-}
 
-.input_review[type="radio"]:checked{
-    background: #444444 !important;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
 
-.input_review[type="radio"]:checked::after{
-    background: #fff647 !important;
-    content: '';
-    border-radius: 2em;
-    width: 60%;
-    height: 60%;
-    position: absolute;
-}
-
-.input_inprogress[type="radio"]{
-    background-color: #7e2199;
-}
-
-.input_done[type="radio"]{
-    background-color: #92d36e;
-}
-
-.input_done[type="radio"]:checked{
-    background: #444444 !important;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-.input_done[type="radio"]:checked::after{
-    background: #89f151 !important;
-    content: '';
-    border-radius: 2em;
-    width: 60%;
-    height: 60%;
-    position: absolute;
-}
 
 label > input[type="radio"]:checked + *::before {
     background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent)!important;
