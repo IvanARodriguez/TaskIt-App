@@ -194,12 +194,16 @@ label > input[type="radio"]:checked + * {
 
 .orange_fill_btn{
     font-size: 1.5rem !important;
-    background-color:#ff8500 !important ;
+    background-color:var(--orange-color) !important ;
     border: none;
     color:#003748;
     font-weight: bold;
     text-transform: uppercase;
     border-radius:10rem;
+}
+
+.orange_fill_btn:hover, .orange_outline_btn:hover{
+    background-color: #c76700 !important;
 }
 
 .orange_outline_btn{

@@ -96,6 +96,7 @@ form.addEventListener("submit", (event)=>{
 
 //Task 7 
 const listTask = document.querySelector("#tasks_group");
+const prioritygroup = document.querySelector("#priority_group");
 
 listTask.addEventListener("click",(event)=>{
   if(event.target.classList.contains("done_btn")){
@@ -113,4 +114,27 @@ listTask.addEventListener("click",(event)=>{
 
     newTaskManager.render();
   }
-})
+});
+
+// create a Priority event for button done
+
+prioritygroup.addEventListener("click",(event)=>{
+  if(event.target.classList.contains("done_btn")){
+    
+    const parentTask = event.target.parentElement.parentElement;
+
+    const taskId = Number(parentTask.getAttribute("data-task-id"));
+
+    const task = newTaskManager.getTaskById(taskId);
+    
+    task.taskStatus = "DONE";
+
+    //save the tasks to localStorage
+    newTaskManager.save();
+
+    newTaskManager.render();
+  }
+});
+
+
+

@@ -88,10 +88,13 @@ const showDetails = ()=>{
     }
 
     render() {
+        //Create an array to hold all regular tasks
         const tasksHtmlList = [];
 
+        //create an array that holds all priority tasks
         const priorityTasks = [];
 
+        //push each task to its corresponding array
         for (let i = 0; i < this.tasks.length; i++) {
             const task = this.tasks[i];
             const date = new Date(task.dueDate);
@@ -104,18 +107,20 @@ const showDetails = ()=>{
             
         }
 
+        
         const tasksHtml = tasksHtmlList.join('\n');
 
         const priorityHtml = priorityTasks.join('\n');
 
+        //get html element that holds all tasks (ul) and insert the collection of tasks.
         const tasksList = document.querySelector('#tasks_group');
-
-        tasksList.innerHTML = tasksHtml;
-
         const priorityList = document.querySelector('#priority_group');
 
-        priorityList.innerHTML = priorityHtml;
+        //If not items show a custom message
+        (tasksHtmlList.length === 0) ? tasksList.innerHTML = "<p class=\"fs-4 text-secondary\">Please add a task</p>" : tasksList.innerHTML = tasksHtml;
+        (priorityTasks.length === 0) ? priorityList.innerHTML = "<p class=\"fs-4 text-secondary\">No priority tasks found</p>" :  priorityList.innerHTML = priorityHtml;
 
+        // call showDetail to apply effect to new show buttons
         showDetails();
 
         //display the total of tasks
@@ -123,6 +128,7 @@ const showDetails = ()=>{
         taskCounter.innerHTML = this.tasks.length;
         
     }
+
     save(){
         //create a json string of the tasks collections
         const tasksJson = JSON.stringify(this.tasks);
@@ -136,6 +142,7 @@ const showDetails = ()=>{
         //store the currentId in local storage
         localStorage.setItem("currentId", currentId);
     }
+
     load(){
         //check if any tasks are saved in local storage
         if(localStorage.getItem("tasks")){
