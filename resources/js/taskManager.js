@@ -88,11 +88,11 @@ const showDetails = ()=>{
     }
 
     render() {
-        //Create an array to hold all regular tasks
-        const tasksHtmlList = [];
-
         //create an array that holds all priority tasks
         const priorityTasks = [];
+
+        //Create an array to hold all regular tasks
+        const tasksHtmlList = [];
 
         //push each task to its corresponding array
         for (let i = 0; i < this.tasks.length; i++) {
@@ -107,18 +107,18 @@ const showDetails = ()=>{
             
         }
 
+        const priorityHtml = priorityTasks.join('\n');
         
         const tasksHtml = tasksHtmlList.join('\n');
 
-        const priorityHtml = priorityTasks.join('\n');
 
         //get html element that holds all tasks (ul) and insert the collection of tasks.
-        const tasksList = document.querySelector('#tasks_group');
         const priorityList = document.querySelector('#priority_group');
+        const tasksList = document.querySelector('#tasks_group');
 
-        //If not items show a custom message
-        (tasksHtmlList.length === 0) ? tasksList.innerHTML = "<p class=\"fs-4 text-secondary\">Please add a task</p>" : tasksList.innerHTML = tasksHtml;
+        //If not items, show a custom message
         (priorityTasks.length === 0) ? priorityList.innerHTML = "<p class=\"fs-4 text-secondary\">No priority tasks found</p>" :  priorityList.innerHTML = priorityHtml;
+        (tasksHtmlList.length === 0) ? tasksList.innerHTML = "<p class=\"fs-4 text-secondary\">Please add a task</p>" : tasksList.innerHTML = tasksHtml;
 
         // call showDetail to apply effect to new show buttons
         showDetails();

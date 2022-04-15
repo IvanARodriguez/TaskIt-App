@@ -1,6 +1,6 @@
 {
     "short_name": "TaskIT",
-    "name": "TaskIt task manager",
+    "name": "TaskIt",
     "icons": [
       {
         "src": "resources/images/logo512.png",
