@@ -47,7 +47,7 @@
       <form id="form_section" class="row needs-validation justify-content-lg-around justify-content-center mt-5" novalidate>
                 <div class="col-md-6 col-xl-4 w-auto">
                     <div class="mb-3 w-100">
-                      <label for="datepicker" class="text-orange">Due date</label>
+                      <label for="datepicker" class="text-orange">Due date <span class="required_signed">*</span></label>
                       <input type="date" hidden class="form-control" id="cal_datepicker" required format="mm-dd-yy">
                       <div id="datepicker" role="" class="w-100" required></div>  
                       <div class="valid-feedback">
@@ -162,7 +162,6 @@
           })
         $('#datepicker').change(function () {
             $('#cal_datepicker').val($('#datepicker').datepicker().val());
-
         });
       });
     </script>
