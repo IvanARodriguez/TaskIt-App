@@ -12,6 +12,7 @@ const createTaskHtml = (id, name, assignedTo, role, description, notes, dueDate,
           <h6 class="fw-light"> For:<span class=" fw-bolder "> ${assignedTo} </span> | <span class="text-secondary fw-light"> ${role} </span></h6>
           <p class="fw-lighter">${description}</p>
           <p>Notes: <span class="fw-lighter">${notes === undefined ? "" : notes}</span></p>
+          <a class="delete_btn text-orange pe-4 " type="button">Delete</a>
           <a class=" done_btn ${(status === 'TODO') ? "open visible": "close invisible"}" type="button">Done?</a>
         </div>
       </li> 
@@ -164,6 +165,16 @@ const showDetails = ()=>{
             this.currentId = Number(currentId);
         }
 
+    }
+    deleteTask(taskId){
+        const newTasks = []; 
+        this.tasks.forEach(task=>{
+            if(task.id !== taskId){
+                newTasks.push(task)
+            }
+
+        })
+        this.tasks = newTasks;
     }
 }
 

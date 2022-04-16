@@ -199,7 +199,6 @@ label > input[type="radio"]:checked + * {
     color:#003748;
     font-weight: bold;
     text-transform: uppercase;
-    border-radius:10rem;
 }
 
 .orange_fill_btn:hover, .orange_outline_btn:hover{
@@ -209,7 +208,7 @@ label > input[type="radio"]:checked + * {
 .orange_outline_btn{
     font-size: 1.5rem !important;
     background-color: transparent;
-    border: 2px solid #ff8500;
+    border: 0px solid #ff8500;
     text-transform: uppercase;
     border-radius: 10rem;
     color: #ff8500;
@@ -221,7 +220,7 @@ label > input[type="radio"]:checked + * {
     background-color: var(--main-grey);
     overflow-y: scroll;
     overflow-x: scroll;
-    border-radius: 2rem;
+    border-radius: .5rem;
     padding: 2rem;
     height: 40%;
 }
@@ -323,6 +322,14 @@ label > input[type="radio"]:checked + * {
 
 .developer{
     height: fit-content;
+}
+
+.developer_link{
+    transition: color .2s ease-in-out;
+}
+
+.developer_link:hover{
+    color: white;
 }
 
 /* media query */

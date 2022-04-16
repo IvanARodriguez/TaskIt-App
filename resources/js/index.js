@@ -96,7 +96,7 @@ form.addEventListener("submit", (event)=>{
 
 //Task 7 
 const listTask = document.querySelector("#tasks_group");
-const prioritygroup = document.querySelector("#priority_group");
+const priorityGroup = document.querySelector("#priority_group");
 
 listTask.addEventListener("click",(event)=>{
   if(event.target.classList.contains("done_btn")){
@@ -114,11 +114,24 @@ listTask.addEventListener("click",(event)=>{
 
     newTaskManager.render();
   }
+  if(event.target.classList.contains("delete_btn")){
+    
+    const parentTask = event.target.parentElement.parentElement;
+    
+    const taskId = Number(parentTask.getAttribute("data-task-id"));
+    
+    newTaskManager.deleteTask(taskId);
+    
+    newTaskManager.save();
+  
+    newTaskManager.render();
+
+  }
 });
 
 // create a Priority event for button done
 
-prioritygroup.addEventListener("click",(event)=>{
+priorityGroup.addEventListener("click",(event)=>{
   if(event.target.classList.contains("done_btn")){
     
     const parentTask = event.target.parentElement.parentElement;
@@ -133,6 +146,19 @@ prioritygroup.addEventListener("click",(event)=>{
     newTaskManager.save();
 
     newTaskManager.render();
+  }
+  if(event.target.classList.contains("delete_btn")){
+    
+    const parentTask = event.target.parentElement.parentElement;
+    
+    const taskId = Number(parentTask.getAttribute("data-task-id"));
+    
+    newTaskManager.deleteTask(taskId);
+    
+    newTaskManager.save();
+  
+    newTaskManager.render();
+
   }
 });
 
