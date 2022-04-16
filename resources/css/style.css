@@ -291,7 +291,6 @@ label > input[type="radio"]:checked + * {
     bottom: 0;
     width: fit-content;
     right: 0;
-    background-color: #1aa518b2;
     border-radius: 1.8rem;
     display: flex;
     margin: 2rem;
@@ -330,6 +329,14 @@ label > input[type="radio"]:checked + * {
 
 .developer_link:hover{
     color: white;
+}
+
+.success-notification{
+    background-color: #127f10b2;
+}
+
+.warning-notification{
+    background-color: rgba(159, 39, 39, 0.726);
 }
 
 /* media query */
