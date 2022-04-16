@@ -30,8 +30,22 @@ newTaskManager.render();
 
 //show notification
 
-const showNotification = ()=>{
+const showNotification = (type, message)=>{
   const notificationBanner = document.getElementById("notification_banner");
+  const notificationBody = document.getElementById("notification_body");
+  const notificationIcon = document.getElementById("notification_icon");
+
+  notificationBody.innerHTML = message;
+
+  if(type === "success"){
+    notificationIcon.className = "bi bi-check-circle-fill display-1";
+    notificationBanner.classList.remove("warning-notification")
+    notificationBanner.classList.add("success-notification");
+  } else if (type === "warning"){
+    notificationIcon.className = "bi bi-x-octagon-fill display-1 ";
+    notificationBanner.classList.add("warning-notification")
+    notificationBanner.classList.remove("success-notification");
+  }
 
   notificationBanner.classList.remove("hide");
   notificationBanner.classList.add("show");
@@ -39,7 +53,7 @@ const showNotification = ()=>{
   setTimeout(()=>{
     notificationBanner.classList.add("hide");
     notificationBanner.classList.remove("show");},
-    1600);
+    2300);
 }
 
 //getting the form inputs
@@ -73,7 +87,7 @@ form.addEventListener("submit", (event)=>{
       dueDate.value, 
       notes.value,
     selectedStatus())
-    showNotification();
+    showNotification("success", "Task successfully added!");
 
     //clear the input fields
      taskName.value = "";
@@ -109,6 +123,8 @@ listTask.addEventListener("click",(event)=>{
     
     task.taskStatus = "DONE";
 
+    showNotification("success", `The task ${task.id} was marked as done!`)
+
     //save the tasks to localStorage
     newTaskManager.save();
 
@@ -125,6 +141,8 @@ listTask.addEventListener("click",(event)=>{
     newTaskManager.save();
   
     newTaskManager.render();
+
+    showNotification("warning", `The task has been deleted`)
 
   }
 });
@@ -146,6 +164,8 @@ priorityGroup.addEventListener("click",(event)=>{
     newTaskManager.save();
 
     newTaskManager.render();
+
+    showNotification("success", `The task ${task.id} was marked as done!`)
   }
   if(event.target.classList.contains("delete_btn")){
     
@@ -158,6 +178,8 @@ priorityGroup.addEventListener("click",(event)=>{
     newTaskManager.save();
   
     newTaskManager.render();
+
+    showNotification("warning", `The task has been deleted`)
 
   }
 });
