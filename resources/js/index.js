@@ -18,7 +18,7 @@ const showNotification = (type, message)=>{
   const notificationBody = document.getElementById("notification_body");
   const notificationIcon = document.getElementById("notification_icon");
 
-  //enter the customed notification  
+  //enter the customized notification  
   notificationBody.innerHTML = message;
 
   //identify if the notification will be a success "green" or danger "red"
@@ -94,7 +94,6 @@ form.addEventListener("submit", (event)=>{
   newTaskManager.render();
 }); 
 
-//Task 7 
 const listTask = document.querySelector("#tasks_group");
 const priorityGroup = document.querySelector("#priority_group");
 
