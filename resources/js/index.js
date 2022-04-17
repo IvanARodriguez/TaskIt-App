@@ -1,42 +1,27 @@
 import { TaskManager } from "./taskManager.js";
 
+//create an instance of the TaskManager Class
 const newTaskManager = new TaskManager();
 
+//global access to the form element
 const form = document.getElementById("form_section")
-
-//TEMPLATES
-// newTaskManager.addTask(
-//   "Take dog out", 
-//   "If you can go to the market and buy some chicken for dinner 🥘",
-//   "Jonathan",
-//   "Husband",
-//   new Date().toDateString(),
-//   "remember the chicken can not be over burned"
-//   );
-  
-//   newTaskManager.addTask(
-//     "Feed the fish", 
-//     "The fish tank doesn't have more filter, if you have a chance go to the pet store 🐠",
-//     "Juan",
-//     "Son",
-//     new Date().toDateString(),
-//     "The filter size is Medium"
-//     );
     
 //load the task from local storage
 newTaskManager.load();
 
 newTaskManager.render();
 
-//show notification
-
+//create a template to display toast notifications
 const showNotification = (type, message)=>{
+  //grab the html notification banner
   const notificationBanner = document.getElementById("notification_banner");
   const notificationBody = document.getElementById("notification_body");
   const notificationIcon = document.getElementById("notification_icon");
 
+  //enter the customized notification  
   notificationBody.innerHTML = message;
 
+  //identify if the notification will be a success "green" or danger "red"
   if(type === "success"){
     notificationIcon.className = "bi bi-check-circle-fill display-1";
     notificationBanner.classList.remove("warning-notification")
@@ -47,13 +32,15 @@ const showNotification = (type, message)=>{
     notificationBanner.classList.remove("success-notification");
   }
 
+  //remove the css hide and implement show
   notificationBanner.classList.remove("hide");
   notificationBanner.classList.add("show");
   
+  //remove the element from the page using asyncronous function setTimeOut()
   setTimeout(()=>{
     notificationBanner.classList.add("hide");
     notificationBanner.classList.remove("show");},
-    2300);
+    2300); //2.3s
 }
 
 //getting the form inputs
@@ -102,13 +89,11 @@ form.addEventListener("submit", (event)=>{
       form.classList.add('was-validated')
     }
   
-
   newTaskManager.save();
 
   newTaskManager.render();
 }); 
 
-//Task 7 
 const listTask = document.querySelector("#tasks_group");
 const priorityGroup = document.querySelector("#priority_group");
 
