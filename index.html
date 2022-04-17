@@ -77,14 +77,14 @@
                         Please Add Task-Role!
                       </div>
                    </div>
-                   <span class="d-block mb-3 display-4 fw-bolder opacity-25">STATUS</span>
+                   <span class="d-block mb-3 display-4 fw-bolder opacity-25">PRIORITY</span>
                    <div class="row pb-3">
                            <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input input_todo" type="radio" name="inlineRadioOptions" id="regular" value="Regular" checked="checked">
+                             <input class="form-check-input radio_input" type="radio" name="inlineRadioOptions" id="regular" value="Regular" checked="checked">
                              <label class="form-check-label" for="regular" >Regular</label>
                            </div>
                            <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input input_urgent" type="radio" name="inlineRadioOptions" id="Urgent" value="Urgent">
+                             <input class="form-check-input radio_input" type="radio" name="inlineRadioOptions" id="Urgent" value="Urgent">
                              <label class="form-check-label" for="Urgent" >Urgent</label>
                            </div>
                    </div>
@@ -164,9 +164,7 @@
             $('#cal_datepicker').val($('#datepicker').datepicker().val());
         });
       });
-    </script>
 
-    <script>
       // Check that service workers are supported
       if ('serviceWorker' in navigator) {
         // Use the window load event to keep the page load performant

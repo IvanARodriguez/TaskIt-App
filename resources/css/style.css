@@ -4,10 +4,6 @@
     box-sizing: border-box !important;
 }
 
-:root{
-    --bs-primary: #f48600;
-}
-
 body{
     background-color: #232323;
     color: #ffffff;
@@ -16,6 +12,7 @@ body{
 :root{
     --orange-color: #ff8500;
     --main-grey: #4444446d;
+    --bs-primary: #f48600;
 }
 
 
@@ -164,22 +161,13 @@ form p{
 }
 
 /* Radio */
-.input_todo[type="radio"]{
+.radio_input[type="radio"]{
+    background-color: var(--orange-color);
+    border: none;
+}
+.radio_input[type="radio"]:checked{
     background-color: var(--orange-color);
 }
-
-
-
-
-label > input[type="radio"]:checked + *::before {
-    background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent)!important;
-    border-color: teal;
-}
-
-label > input[type="radio"]:checked + * {
-    color: teal !important;
-}
-
 
 
 /* Button */
@@ -233,16 +221,9 @@ label > input[type="radio"]:checked + * {
     height: fit-content;
 }
 
-.close .details{
-    display: none;
-    transform: translateY(70%);
-    height: 0;
-    visibility: hidden;
-}
 
 .details{
     transition: transform .3s ease-in-out, visibility 0.3s linear;
-    
 }
 
 .details_viewer i{
@@ -253,12 +234,30 @@ label > input[type="radio"]:checked + * {
     color: var(--orange-color);
     
 }
+.close .details{
+    display: none;
+    transform: translateY(70%);
+    height: 0;
+    visibility: hidden;
+}
 .open .details{
-    display: block;
     transform: translateY(0);
     height: fit-content;
     visibility: visible;
+    display: block;
+    animation: dropdown .5s forwards;
    
+}
+@keyframes dropdown {
+    from{
+        transform: translateY(-30%);
+        visibility: hidden;
+    }
+
+    to{
+        visibility: visible;
+        transform: translateY(0%);
+    }
 }
 .border-left-orange{
     border-left: 3px solid var(--orange-color);
@@ -362,3 +361,4 @@ label > input[type="radio"]:checked + * {
         padding: .5rem 2rem;
     }
 }
+
