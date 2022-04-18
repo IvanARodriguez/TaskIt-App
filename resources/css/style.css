@@ -69,7 +69,11 @@ input::placeholder{
 .logo {
     font-size: 2rem;
     row-gap: 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
+}
+
+.logo img{
+    animation: rotator 1.3s forwards;
 }
 
 .logo p{
@@ -212,6 +216,9 @@ form p{
     padding: 2rem;
     height: 40%;
 }
+.task{
+    animation: dropdown .8s forwards ;
+}
 
 .task_box::-webkit-scrollbar {
     width: 0px;
@@ -245,18 +252,47 @@ form p{
     height: fit-content;
     visibility: visible;
     display: block;
-    animation: dropdown .5s forwards;
+    animation: slideLeft .5s forwards;
    
 }
+@keyframes rotator {
+    0%{
+        transform: rotate(0deg);
+    }
+    30%{
+        transform: rotate(-120deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes dropdown {
     from{
-        transform: translateY(-30%);
+        transform: translateY(-100%);
         visibility: hidden;
     }
 
     to{
         visibility: visible;
         transform: translateY(0%);
+    }
+}
+
+@keyframes slideRight {
+    from{
+        transform: translateX(80%)
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideLeft {
+    from{
+        transform: translateX(-80%)
+    }
+    to{
+        transform: translateX(0%);
     }
 }
 .border-left-orange{
@@ -314,6 +350,17 @@ form p{
 }
 
 /* developers */
+.dev_title{
+    animation: dropdown 2s forwards;
+}
+.janice{
+    animation: slideRight 1s forwards;
+}
+
+.ivan{
+    animation: slideLeft .6s forwards;
+}
+
 .meet{
     color: var(--orange-color);
 }
@@ -342,6 +389,13 @@ form p{
 @media screen and (max-width: 440px) {
     .intro_screen{
         display: block;
+    }
+    #view_section{
+        margin-top: 3rem;
+    }
+    .task_box{
+        height: fit-content;
+        margin-bottom: 2rem;
     }
 }
 
