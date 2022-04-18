@@ -1,6 +1,6 @@
  //create HTML task template
 const createTaskHtml = (id, name, assignedTo, role, description, notes, dueDate, status) => `
-      <li data-task-id="${id}"class="row border-bottom pb-2 border-secondary mb-3 align-items-center close" >
+      <li data-task-id="${id}"class="task row border-bottom pb-2 border-secondary mb-3 align-items-center close" >
         <span class="col-2 d-block pb-3"><span class="me-3 ${(status === "DONE") ? "done_indicator": "todo_indicator" }"><i class="bi bi-circle-fill"></i></span>${(id < 10) ? "0" + id  : id}</span> 
         <h4 class="col-8 fw-lighter ${(status === "DONE") ? "done": "todo" }" id="Task-${id}">${name}</h4>
         <a type="button" class="text-white col-2 details_viewer" ><i class="bi bi-eye-fill"></i></a>
