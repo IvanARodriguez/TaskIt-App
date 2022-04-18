@@ -110,6 +110,7 @@ input::placeholder{
     color: var(--orange-color) !important;
     border-color: var(--orange-color) !important;
     background-color: #4e4e4e86;
+    animation: slideLeft 1s forwards;
 }
 .navigation{
     background-color: #1c1c1c;
@@ -205,6 +206,7 @@ form p{
     border-radius: 10rem;
     color: #ff8500;
     font-weight: bold;
+    transition: background-color .4s ease-in-out;
 }
 
 /* Task card styling */
@@ -378,11 +380,11 @@ form p{
 }
 
 .success-notification{
-    background-color: #127f10b2;
+    background-color: #0b8509;
 }
 
 .warning-notification{
-    background-color: rgba(159, 39, 39, 0.726);
+    background-color: rgb(159, 39, 39);
 }
 
 /* media query */
