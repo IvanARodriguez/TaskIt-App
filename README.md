@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/IvanARodriguez/Final_Project/main/resources/images/logo192.png" width="250">
+<img src="https://raw.githubusercontent.com/IvanARodriguez/Final_Project/main/resources/images/logo192.png" width="150" align="center">
 
 # TaskIt App
 
