@@ -1,8 +1,8 @@
-<img src="https://raw.githubusercontent.com/IvanARodriguez/Final_Project/main/resources/images/logo192.png" width="150" align="center">
+<img src="https://raw.githubusercontent.com/IvanARodriguez/Final_Project/main/resources/images/logo192.png" style="width: 150; align: center;">
 
 # TaskIt App
 
-##Features
+## Features
 
 1 - Create Tasks.
 
@@ -17,3 +17,5 @@
 6 - Use local storage.
 
 7 - Handle offline interface.
+
+<a href="https://www.taskitapp.net">View Project</a>
