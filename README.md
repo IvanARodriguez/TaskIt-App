@@ -6,7 +6,7 @@
 
 1 - Create Tasks.
 
-2 - Set its priorities (regular or urgent)
+2 - Set the task priorities (regular or urgent)
 
 3 - Mark it as done and delete it.
 
