@@ -42,99 +42,98 @@
           </ul>
       </nav>
       <div class="align-self-end text-secondary text-center pt-5">
-        <p>TaskIt &copy; MIT Licensed 2022</p>
+        <p aria-hidden="true">TaskIt &copy; MIT Licensed 2022</p>
       </div>
     </header>
  <!-- form control/input with calendar -->
     <div class="row p-0 m-0 col-xl-6">
       <form id="form_section" class="row needs-validation justify-content-lg-around justify-content-center mt-5" novalidate>
-                <div class="col-md-6 col-xl-4 w-auto">
-                    <div class="mb-3 w-100">
-                      <label for="datepicker" class="form-label text-orange">Due date <span class="required_signed">*</span></label>
-                      <input type="date" hidden class="form-control" id="cal_datepicker" required format="mm-dd-yy">
-                      <div id="datepicker" role="" class="w-100" required></div>  
-                      <div class="valid-feedback">
-                        Ok!
-                      </div>
-                      <div class="invalid-feedback">
-                        Select a due date!
-                      </div>                     
-                    </div>
-                    <div class="mb-3">
-                     <label for="AssignTo" class="form-label text-orange">Assign To <span class="required_signed">*</span></label>
-                     <input type="text" class="form-control py-2" id="AssignTo" placeholder="Enter Name" required>
-                     <div class="valid-feedback">
-                        Looks good!
-                      </div>
-                      <div class="invalid-feedback">
-                        Who is this task for?
-                      </div>
+        <div class="col-md-6 col-xl-4 w-auto">
+            <div class="mb-3 w-100">
+              <label for="datepicker" class="form-label text-orange">Due date <span class="required_signed">*</span></label>
+              <input type="date" hidden class="form-control" id="cal_datepicker" required format="mm-dd-yy">
+              <div id="datepicker" role="" class="w-100" required></div>  
+              <div class="valid-feedback">
+                Ok!
+              </div>
+              <div class="invalid-feedback">
+                Select a due date!
+              </div>                     
+            </div>
+            <div class="mb-3">
+             <label for="AssignTo" class="form-label text-orange">Assign To <span class="required_signed">*</span></label>
+             <input type="text" class="form-control py-2" id="AssignTo" placeholder="Enter Name" required>
+             <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Who is this task for?
+              </div>
+           </div>
+            <div class="mb-3">
+             <label for="TaskRole" class="form-label">Task Role <span class="required_signed">*</span></label>
+             <input type="text" class="form-control py-2" id="TaskRole" placeholder="Enter Role" required>
+             <div class="valid-feedback">
+                Great!
+              </div>
+              <div class="invalid-feedback">
+                Please add assignee role!
+              </div>
+           </div>
+           <span class="d-block mb-3 display-4 fw-bolder opacity-25" aria-hidden="true">PRIORITY</span>
+           <div class="row ps-3 pb-3 ">
+                   <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
+                     <input class="form-check-input radio_input" type="radio" name="inlineRadioOptions" id="regular" value="Regular" checked="checked">
+                     <label class="form-check-label" for="regular" >Regular</label>
                    </div>
-                    <div class="mb-3">
-                     <label for="TaskRole" class="form-label">Task Role <span class="required_signed">*</span></label>
-                     <input type="text" class="form-control py-2" id="TaskRole" placeholder="Enter Role" required>
-                     <div class="valid-feedback">
-                        Great!
-                      </div>
-                      <div class="invalid-feedback">
-                        Please add assignee role!
-                      </div>
+                   <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
+                     <input class="form-check-input radio_input" type="radio" name="inlineRadioOptions" id="Urgent" value="Urgent">
+                     <label class="form-check-label" for="Urgent" >Urgent</label>
                    </div>
-                   <span class="d-block mb-3 display-4 fw-bolder opacity-25">PRIORITY</span>
-                   <div class="row pb-3">
-                           <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input radio_input" type="radio" name="inlineRadioOptions" id="regular" value="Regular" checked="checked">
-                             <label class="form-check-label" for="regular" >Regular</label>
-                           </div>
-                           <div class="form-check form-check-inline col-md-4 col-sm-12 w-auto pb-4">
-                             <input class="form-check-input radio_input" type="radio" name="inlineRadioOptions" id="Urgent" value="Urgent">
-                             <label class="form-check-label" for="Urgent" >Urgent</label>
-                           </div>
-                   </div>
-                </div>
-                <div class="col-md-6 col-xl-6 row align-items-start">
-                    <div class="mb-3">
-                     <label for="TaskName" class="form-label">Task Name <span class="required_signed">*</span></label>
-                     <input type="text" class="form-control py-2" id="TaskName" placeholder="What Need To Be Done?" required>
-                     <div class="valid-feedback">
-                        Awesome!
-                      </div>
-                      <div class="invalid-feedback">
-                        Please Add Task-Name!
-                      </div>
-                   </div>
-                   <div class="mb-3">
-                     <label for="Description" class="form-label">Description <span class="required_signed">*</span> </label>
-                     <textarea class="form-control" id="Description" rows="10" required></textarea>
-                     <div class="valid-feedback">
-                        Pretty much done!
-                      </div>
-                      <div class="invalid-feedback">
-                        Please Add Description!
-                      </div>
-                   </div>
-                   <div class="mb-3">
-                     <label for="Notes" class="form-label">Notes (Optional)</label>
-                     <textarea class="form-control" id="Notes" rows="10"></textarea>
-                   </div>
-                </div>
-                <div class="btn_group d-flex justify-content-center align-items-center col-12 align-self-baseline">
-                  <button type="submit" class="btn text-dark btn-sm orange_fill_btn h-100 rounded"><i class="bi bi-plus-circle-fill"></i> add Task</button>
-                  <button type="reset" class="btn btn-sm orange_outline_btn rounded">Reset</button>
-                 </div>
-
-                 <!-- notification -->
-                 <div class="notification text-white hide" id="notification_banner">
-                     <i class="bi bi-check-circle-fill display-1 checked_circle" id="notification_icon"></i>
-                     <p class="text-light fw-normal" id="notification_body"></p>
-                 </div>
+           </div>
+        </div>
+        <div class="col-md-6 col-xl-6 row align-items-start">
+            <div class="mb-3">
+             <label for="TaskName" class="form-label">Task Name <span class="required_signed">*</span></label>
+             <input type="text" class="form-control py-2" id="TaskName" placeholder="What Need To Be Done?" required>
+             <div class="valid-feedback">
+                Awesome!
+              </div>
+              <div class="invalid-feedback">
+                Please Add Task-Name!
+              </div>
+           </div>
+           <div class="mb-3">
+             <label for="Description" class="form-label">Description <span class="required_signed">*</span> </label>
+             <textarea class="form-control" id="Description" rows="10" required></textarea>
+             <div class="valid-feedback">
+                Pretty much done!
+              </div>
+              <div class="invalid-feedback">
+                Please Add Description!
+              </div>
+           </div>
+           <div class="mb-3">
+             <label for="Notes" class="form-label">Notes (Optional)</label>
+             <textarea class="form-control" id="Notes" rows="10"></textarea>
+           </div>
+        </div>
+        <div class="btn_group d-flex justify-content-center align-items-center col-12 align-self-baseline">
+          <button type="submit" class="btn text-dark btn-sm orange_fill_btn h-100 rounded"><i class="bi bi-plus-circle-fill"></i> add Task</button>
+          <button type="reset" class="btn btn-sm orange_outline_btn rounded">Reset</button>
+        </div>
+         <!-- notification -->
+        <div class="notification text-white hide" id="notification_banner">
+            <i class="bi bi-check-circle-fill display-1 checked_circle" id="notification_icon"></i>
+            <p class="text-light fw-normal" id="notification_body"></p>
+        </div>
       </form>
     </div>
     
     <!-- Task layouts -->
     <div id="view_section"class="row p-0 col-xl-4 task_wrapper d-flex justify-content-center align-items-center">
       <div class="priority_header">
-        <h2 class="fw-bolder opacity-25 display-5 ">PRIORITY TASKS</h2>
+        <h2 class="fw-bolder opacity-25 display-5 " aria-hidden="true">PRIORITY TASKS</h2>
       </div>
 
       <div class="task_box" id="priority_group">
@@ -151,30 +150,30 @@
     </div>
   </div>
 
-   <!-- Footer -->
-    
-    <script src="resources/js/index.js" type="module"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
-    <script>
-      // DATE TIME PICKER Jquery configuration
-      $(function() { 
-          $('#datepicker').datepicker({
-              dateFormat:"yy-mm-dd",
-              minDate: new Date()
-          })
-        $('#datepicker').change(function () {
-            $('#cal_datepicker').val($('#datepicker').datepicker().val());
-        });
+  !-- Footer -->
+  
+  <script src="resources/js/index.js" type="module"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+  <script>
+    // DATE TIME PICKER Jquery configuration
+    $(function() { 
+        $('#datepicker').datepicker({
+            dateFormat:"yy-mm-dd",
+            minDate: new Date()
+        })
+      $('#datepicker').change(function () {
+          $('#cal_datepicker').val($('#datepicker').datepicker().val());
       });
+    });
 
-      // Check that service workers are supported
-      if ('serviceWorker' in navigator) {
-        // Use the window load event to keep the page load performant
-         window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js');
-        });
-      }
-    </script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+       window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js');
+      });
+    }
+  </script>
 </body>
 </html>
